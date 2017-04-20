@@ -19,3 +19,8 @@ let screenHeight = UIScreen.main.bounds.height
 
 /// Documents目录
 let docPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+
+// cell间隔背景颜色
+let footerViewBgColor = UIColor.color(hex: "#EAEAEA")
+/// section间距
+let cellMargin: CGFloat = 8

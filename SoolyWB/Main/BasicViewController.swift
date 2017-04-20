@@ -11,9 +11,11 @@ import UIKit
 class BasicViewController: UIViewController {
 
     lazy var tabelView: UITableView = UITableView()
+    /// 下拉刷新控件
     lazy var refreshControl = UIRefreshControl()
+    /// 上拉视图
     lazy var pullUpView = PullUpView.pullUpView()
-    
+    /// 是否是上拉刷新
     var isPullUp: Bool = false
     
     override func viewDidLoad() {
@@ -51,6 +53,7 @@ extension BasicViewController {
         tabelView.backgroundColor = UIColor.white
         tabelView.delegate = self
         tabelView.dataSource = self
+        tabelView.separatorStyle = .none
         
         // 下拉刷新控件
         tabelView.refreshControl = refreshControl
@@ -98,6 +101,7 @@ extension BasicViewController: UITableViewDelegate, UITableViewDataSource {
         // 开始刷新
         pullUpView.indicator.startAnimating()
         isPullUp = true
+        pullUpView.indicator.isHidden = false
         loadData()
     }
 

@@ -7,6 +7,7 @@ target 'SoolyWB' do
 pod "ESTabBarController-swift"
 pod 'Alamofire', '~> 4.4'
 pod "HandyJSON"
+pod "Kingfisher"
   # Pods for SoolyWB
 
   target 'SoolyWBTests' do

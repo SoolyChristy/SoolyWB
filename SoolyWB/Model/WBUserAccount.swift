@@ -92,7 +92,7 @@ struct WBUserInfo: HandyJSON {
     /// 是否是微博认证用户，即加V用户，true：是，false：否
     var verified: String?
     /// 认证类型，-1：没有认证，0，认证用户，2,3,5: 企业认证，220: 达人
-    var verified_type: Int = 0
+    var verified_type: Int = -1
     
 //    required init() {}
     

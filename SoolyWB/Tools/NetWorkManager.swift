@@ -59,7 +59,7 @@ extension NetWorkManager {
     ///   - sinceID: since_id 返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0
     ///   - maxID: max_id 返回ID小于或等于max_id的微博，默认为0
     /// - 默认返回20条 微博模型数组
-    func loadStatuses(sinceID: Int64, maxID: Int64, compeletion: @escaping (_ Statues: [WBStatus]?, _ isSuccess: Bool) -> ()) {
+    func loadStatuses(sinceID: Int64, maxID: Int64, compeletion: @escaping (_ Statues: [WBStatusViewModel]?, _ isSuccess: Bool) -> ()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         guard let accessToken = userAccount.access_token else {
@@ -75,20 +75,24 @@ extension NetWorkManager {
             if isSuccess {
                 
                 // 将JSON字典数组 => 模型数组
-                var statuses = [WBStatus]()
+                var statusVMs = [WBStatusViewModel]()
                 guard let statusesArr = json?["statuses"] as? [NSDictionary] else {
                     return
                 }
                 for statusDic in statusesArr {
                     let status = WBStatus.deserialize(from: statusDic)
                     if let status = status {
-                        statuses.append(status)
+                        
+                        // 微博模型 => 微博视图模型
+                        let statusVM = WBStatusViewModel(model: status)
+                        
+                        statusVMs.append(statusVM)
                     }
                 }
                 
-                print("刷新到\(statuses.count)条数据！")
+                print("刷新到\(statusVMs.count)条数据")
                 
-                compeletion(statuses, true)
+                compeletion(statusVMs, true)
                 
             } else {
                 
