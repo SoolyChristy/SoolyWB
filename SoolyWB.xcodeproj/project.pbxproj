@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F9EF40505D5185FA2AC64BB /* Pods_SoolyWBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D67B68B25221059B7D5FE21 /* Pods_SoolyWBUITests.framework */; };
+		7010F3941EA88A0C002CD908 /* PullUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010F3931EA88A0C002CD908 /* PullUpView.swift */; };
+		7010F3961EA88A19002CD908 /* PullUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7010F3951EA88A19002CD908 /* PullUpView.xib */; };
 		70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B351EA5B50C008F9A02 /* AppDelegate.swift */; };
-		70879B381EA5B50C008F9A02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B371EA5B50C008F9A02 /* ViewController.swift */; };
 		70879B3B1EA5B50C008F9A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70879B391EA5B50C008F9A02 /* Main.storyboard */; };
 		70879B3D1EA5B50C008F9A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70879B3C1EA5B50C008F9A02 /* Assets.xcassets */; };
 		70879B401EA5B50C008F9A02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70879B3E1EA5B50C008F9A02 /* LaunchScreen.storyboard */; };
 		70879B4B1EA5B50C008F9A02 /* SoolyWBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B4A1EA5B50C008F9A02 /* SoolyWBTests.swift */; };
 		70879B561EA5B50C008F9A02 /* SoolyWBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B551EA5B50C008F9A02 /* SoolyWBUITests.swift */; };
+		70879B661EA5C8B3008F9A02 /* ESTabBarController_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70879B651EA5C8B3008F9A02 /* ESTabBarController_swift.framework */; };
+		70879B7E1EA5E0AD008F9A02 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B7A1EA5E0AD008F9A02 /* BasicViewController.swift */; };
+		70879B7F1EA5E0AD008F9A02 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B7B1EA5E0AD008F9A02 /* MainViewController.swift */; };
+		70879B801EA5E0AD008F9A02 /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B7C1EA5E0AD008F9A02 /* WBNavigationController.swift */; };
+		70879B811EA5E0AD008F9A02 /* WBTabBarItemContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B7D1EA5E0AD008F9A02 /* WBTabBarItemContentView.swift */; };
+		70879B8D1EA61B40008F9A02 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70879B8C1EA61B40008F9A02 /* Alamofire.framework */; };
+		70879B921EA61CD5008F9A02 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B911EA61CD5008F9A02 /* HomeViewController.swift */; };
+		70879B991EA61D1A008F9A02 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B981EA61D1A008F9A02 /* NetWorkManager.swift */; };
+		70879B9C1EA61D7F008F9A02 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B9B1EA61D7F008F9A02 /* Header.swift */; };
+		70879B9E1EA61EE2008F9A02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B9D1EA61EE2008F9A02 /* LoginViewController.swift */; };
+		70879BA01EA640E4008F9A02 /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B9F1EA640E4008F9A02 /* WBUserAccount.swift */; };
+		70A4E6EA1EA65BB600CF9E74 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4E6E91EA65BB600CF9E74 /* WBStatus.swift */; };
+		D915DF9E8138604855B3762C /* Pods_SoolyWBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863261F819D4D403EFEC9BE7 /* Pods_SoolyWBTests.framework */; };
+		E768E3A642308D056FB18867 /* Pods_SoolyWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7E5CADC7C951B15D25E317 /* Pods_SoolyWB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CFBF8DC40474B544B23BFA4 /* Pods-SoolyWB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWB.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWB/Pods-SoolyWB.release.xcconfig"; sourceTree = "<group>"; };
+		1D67B68B25221059B7D5FE21 /* Pods_SoolyWBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoolyWBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22CA91AA57FA3D4B530EB232 /* Pods-SoolyWBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWBUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWBUITests/Pods-SoolyWBUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		37490CCB9E1E06A1CAAB640C /* Pods-SoolyWBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWBTests/Pods-SoolyWBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38AB30E31D53F1860EB58E96 /* Pods-SoolyWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWB/Pods-SoolyWB.debug.xcconfig"; sourceTree = "<group>"; };
+		7010F3931EA88A0C002CD908 /* PullUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullUpView.swift; sourceTree = "<group>"; };
+		7010F3951EA88A19002CD908 /* PullUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullUpView.xib; sourceTree = "<group>"; };
 		70879B321EA5B50C008F9A02 /* SoolyWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70879B351EA5B50C008F9A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70879B371EA5B50C008F9A02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		70879B3A1EA5B50C008F9A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70879B3C1EA5B50C008F9A02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70879B3F1EA5B50C008F9A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +69,22 @@
 		70879B511EA5B50C008F9A02 /* SoolyWBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoolyWBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70879B551EA5B50C008F9A02 /* SoolyWBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoolyWBUITests.swift; sourceTree = "<group>"; };
 		70879B571EA5B50D008F9A02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70879B651EA5C8B3008F9A02 /* ESTabBarController_swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ESTabBarController_swift.framework; path = "../../Library/Developer/Xcode/DerivedData/SoolyWB-ehxhvzevwpkzguhjosfmfvubkqhf/Build/Products/Debug-iphonesimulator/ESTabBarController-swift/ESTabBarController_swift.framework"; sourceTree = "<group>"; };
+		70879B7A1EA5E0AD008F9A02 /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		70879B7B1EA5E0AD008F9A02 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		70879B7C1EA5E0AD008F9A02 /* WBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
+		70879B7D1EA5E0AD008F9A02 /* WBTabBarItemContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTabBarItemContentView.swift; sourceTree = "<group>"; };
+		70879B8C1EA61B40008F9A02 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/SoolyWB-ehxhvzevwpkzguhjosfmfvubkqhf/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		70879B911EA61CD5008F9A02 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		70879B981EA61D1A008F9A02 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		70879B9B1EA61D7F008F9A02 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		70879B9D1EA61EE2008F9A02 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		70879B9F1EA640E4008F9A02 /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
+		70A4E6E91EA65BB600CF9E74 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
+		75EA7C6DCC8B2806118E110C /* Pods-SoolyWBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWBUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWBUITests/Pods-SoolyWBUITests.release.xcconfig"; sourceTree = "<group>"; };
+		863261F819D4D403EFEC9BE7 /* Pods_SoolyWBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoolyWBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F7E5CADC7C951B15D25E317 /* Pods_SoolyWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoolyWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D47ADFF5E74F5C3E99B27798 /* Pods-SoolyWBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWBTests/Pods-SoolyWBTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70879B8D1EA61B40008F9A02 /* Alamofire.framework in Frameworks */,
+				70879B661EA5C8B3008F9A02 /* ESTabBarController_swift.framework in Frameworks */,
+				E768E3A642308D056FB18867 /* Pods_SoolyWB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D915DF9E8138604855B3762C /* Pods_SoolyWBTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +110,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F9EF40505D5185FA2AC64BB /* Pods_SoolyWBUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63618B4C2B25864015762953 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70879B8C1EA61B40008F9A02 /* Alamofire.framework */,
+				70879B651EA5C8B3008F9A02 /* ESTabBarController_swift.framework */,
+				9F7E5CADC7C951B15D25E317 /* Pods_SoolyWB.framework */,
+				863261F819D4D403EFEC9BE7 /* Pods_SoolyWBTests.framework */,
+				1D67B68B25221059B7D5FE21 /* Pods_SoolyWBUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		70879B291EA5B50C008F9A02 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +136,8 @@
 				70879B491EA5B50C008F9A02 /* SoolyWBTests */,
 				70879B541EA5B50C008F9A02 /* SoolyWBUITests */,
 				70879B331EA5B50C008F9A02 /* Products */,
+				CBE0B260E147E33764D16C4A /* Pods */,
+				63618B4C2B25864015762953 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +154,15 @@
 		70879B341EA5B50C008F9A02 /* SoolyWB */ = {
 			isa = PBXGroup;
 			children = (
+				70879B791EA5E0AD008F9A02 /* Main */,
+				70879B901EA61CD5008F9A02 /* Home(主页) */,
+				70879B931EA61CE9008F9A02 /* Message */,
+				70879B941EA61D02008F9A02 /* Discover */,
+				70879B951EA61D0B008F9A02 /* Profile */,
+				70879B961EA61D12008F9A02 /* Other */,
+				70879B9A1EA61D22008F9A02 /* Model */,
+				70879B971EA61D1A008F9A02 /* Tools(工具) */,
 				70879B351EA5B50C008F9A02 /* AppDelegate.swift */,
-				70879B371EA5B50C008F9A02 /* ViewController.swift */,
 				70879B391EA5B50C008F9A02 /* Main.storyboard */,
 				70879B3C1EA5B50C008F9A02 /* Assets.xcassets */,
 				70879B3E1EA5B50C008F9A02 /* LaunchScreen.storyboard */,
@@ -125,6 +189,97 @@
 			path = SoolyWBUITests;
 			sourceTree = "<group>";
 		};
+		70879B791EA5E0AD008F9A02 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				70879B821EA61450008F9A02 /* TabBar */,
+				70879B7A1EA5E0AD008F9A02 /* BasicViewController.swift */,
+				70879B7C1EA5E0AD008F9A02 /* WBNavigationController.swift */,
+				70879B9D1EA61EE2008F9A02 /* LoginViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		70879B821EA61450008F9A02 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				70879B7B1EA5E0AD008F9A02 /* MainViewController.swift */,
+				70879B7D1EA5E0AD008F9A02 /* WBTabBarItemContentView.swift */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		70879B901EA61CD5008F9A02 /* Home(主页) */ = {
+			isa = PBXGroup;
+			children = (
+				70879B911EA61CD5008F9A02 /* HomeViewController.swift */,
+			);
+			name = "Home(主页)";
+			path = Home;
+			sourceTree = "<group>";
+		};
+		70879B931EA61CE9008F9A02 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		70879B941EA61D02008F9A02 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		70879B951EA61D0B008F9A02 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		70879B961EA61D12008F9A02 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				70879B9B1EA61D7F008F9A02 /* Header.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		70879B971EA61D1A008F9A02 /* Tools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+				70879B981EA61D1A008F9A02 /* NetWorkManager.swift */,
+				7010F3931EA88A0C002CD908 /* PullUpView.swift */,
+				7010F3951EA88A19002CD908 /* PullUpView.xib */,
+			);
+			name = "Tools(工具)";
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		70879B9A1EA61D22008F9A02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70879B9F1EA640E4008F9A02 /* WBUserAccount.swift */,
+				70A4E6E91EA65BB600CF9E74 /* WBStatus.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBE0B260E147E33764D16C4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38AB30E31D53F1860EB58E96 /* Pods-SoolyWB.debug.xcconfig */,
+				0CFBF8DC40474B544B23BFA4 /* Pods-SoolyWB.release.xcconfig */,
+				37490CCB9E1E06A1CAAB640C /* Pods-SoolyWBTests.debug.xcconfig */,
+				D47ADFF5E74F5C3E99B27798 /* Pods-SoolyWBTests.release.xcconfig */,
+				22CA91AA57FA3D4B530EB232 /* Pods-SoolyWBUITests.debug.xcconfig */,
+				75EA7C6DCC8B2806118E110C /* Pods-SoolyWBUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70879B5A1EA5B50D008F9A02 /* Build configuration list for PBXNativeTarget "SoolyWB" */;
 			buildPhases = (
+				1CE374EDB99D608C41EC5725 /* [CP] Check Pods Manifest.lock */,
 				70879B2E1EA5B50C008F9A02 /* Sources */,
 				70879B2F1EA5B50C008F9A02 /* Frameworks */,
 				70879B301EA5B50C008F9A02 /* Resources */,
+				7749F18F2156C599E746B361 /* [CP] Embed Pods Frameworks */,
+				E22091EE1ED3DD2C4B1B6FEB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +307,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70879B5D1EA5B50D008F9A02 /* Build configuration list for PBXNativeTarget "SoolyWBTests" */;
 			buildPhases = (
+				B1EE263753B0AC3941CD0D23 /* [CP] Check Pods Manifest.lock */,
 				70879B421EA5B50C008F9A02 /* Sources */,
 				70879B431EA5B50C008F9A02 /* Frameworks */,
 				70879B441EA5B50C008F9A02 /* Resources */,
+				C53B8A2D455ED067FC8EFB05 /* [CP] Embed Pods Frameworks */,
+				A9209D89A91642E5B076848C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +328,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70879B601EA5B50D008F9A02 /* Build configuration list for PBXNativeTarget "SoolyWBUITests" */;
 			buildPhases = (
+				6831692C971EF32F9C016953 /* [CP] Check Pods Manifest.lock */,
 				70879B4D1EA5B50C008F9A02 /* Sources */,
 				70879B4E1EA5B50C008F9A02 /* Frameworks */,
 				70879B4F1EA5B50C008F9A02 /* Resources */,
+				FF4CDA899F14D404E5810453 /* [CP] Embed Pods Frameworks */,
+				DE22833AEB5366BC6553CFCA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7010F3961EA88A19002CD908 /* PullUpView.xib in Resources */,
 				70879B401EA5B50C008F9A02 /* LaunchScreen.storyboard in Resources */,
 				70879B3D1EA5B50C008F9A02 /* Assets.xcassets in Resources */,
 				70879B3B1EA5B50C008F9A02 /* Main.storyboard in Resources */,
@@ -257,13 +422,161 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CE374EDB99D608C41EC5725 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6831692C971EF32F9C016953 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7749F18F2156C599E746B361 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoolyWB/Pods-SoolyWB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9209D89A91642E5B076848C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoolyWBTests/Pods-SoolyWBTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1EE263753B0AC3941CD0D23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C53B8A2D455ED067FC8EFB05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoolyWBTests/Pods-SoolyWBTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE22833AEB5366BC6553CFCA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoolyWBUITests/Pods-SoolyWBUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E22091EE1ED3DD2C4B1B6FEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoolyWB/Pods-SoolyWB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF4CDA899F14D404E5810453 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoolyWBUITests/Pods-SoolyWBUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		70879B2E1EA5B50C008F9A02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70879B381EA5B50C008F9A02 /* ViewController.swift in Sources */,
+				70879B9E1EA61EE2008F9A02 /* LoginViewController.swift in Sources */,
+				70879B9C1EA61D7F008F9A02 /* Header.swift in Sources */,
+				70879B7E1EA5E0AD008F9A02 /* BasicViewController.swift in Sources */,
+				70879B801EA5E0AD008F9A02 /* WBNavigationController.swift in Sources */,
 				70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */,
+				70879B7F1EA5E0AD008F9A02 /* MainViewController.swift in Sources */,
+				70879B991EA61D1A008F9A02 /* NetWorkManager.swift in Sources */,
+				70A4E6EA1EA65BB600CF9E74 /* WBStatus.swift in Sources */,
+				7010F3941EA88A0C002CD908 /* PullUpView.swift in Sources */,
+				70879B811EA5E0AD008F9A02 /* WBTabBarItemContentView.swift in Sources */,
+				70879B921EA61CD5008F9A02 /* HomeViewController.swift in Sources */,
+				70879BA01EA640E4008F9A02 /* WBUserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +728,7 @@
 		};
 		70879B5B1EA5B50D008F9A02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38AB30E31D53F1860EB58E96 /* Pods-SoolyWB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7523YW79F8;
@@ -428,6 +742,7 @@
 		};
 		70879B5C1EA5B50D008F9A02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CFBF8DC40474B544B23BFA4 /* Pods-SoolyWB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7523YW79F8;
@@ -441,6 +756,7 @@
 		};
 		70879B5E1EA5B50D008F9A02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37490CCB9E1E06A1CAAB640C /* Pods-SoolyWBTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,6 +772,7 @@
 		};
 		70879B5F1EA5B50D008F9A02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D47ADFF5E74F5C3E99B27798 /* Pods-SoolyWBTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +788,7 @@
 		};
 		70879B611EA5B50D008F9A02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22CA91AA57FA3D4B530EB232 /* Pods-SoolyWBUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 7523YW79F8;
@@ -485,6 +803,7 @@
 		};
 		70879B621EA5B50D008F9A02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75EA7C6DCC8B2806118E110C /* Pods-SoolyWBUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 7523YW79F8;
@@ -516,6 +835,7 @@
 				70879B5C1EA5B50D008F9A02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70879B5D1EA5B50D008F9A02 /* Build configuration list for PBXNativeTarget "SoolyWBTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +844,7 @@
 				70879B5F1EA5B50D008F9A02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70879B601EA5B50D008F9A02 /* Build configuration list for PBXNativeTarget "SoolyWBUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +853,7 @@
 				70879B621EA5B50D008F9A02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
