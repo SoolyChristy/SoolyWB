@@ -16,6 +16,10 @@
 		7010F3A11EA8E87C002CD908 /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010F3A01EA8E87C002CD908 /* UIImageView+WebImage.swift */; };
 		7010F3A31EA8E88F002CD908 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7010F3A21EA8E88F002CD908 /* Kingfisher.framework */; };
 		7010F3A51EA8EE4B002CD908 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010F3A41EA8EE4B002CD908 /* UIColor+HexString.swift */; };
+		703695D41EACE1120029834F /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703695D21EACE1120029834F /* ComposeViewController.swift */; };
+		703695D51EACE1120029834F /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703695D31EACE1120029834F /* ComposeViewController.xib */; };
+		70379AA11EAB121800CA42DA /* RepostStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70379AA01EAB121800CA42DA /* RepostStatusCell.xib */; };
+		70379AA31EAB141300CA42DA /* toolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70379AA21EAB141300CA42DA /* toolBarView.swift */; };
 		70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B351EA5B50C008F9A02 /* AppDelegate.swift */; };
 		70879B3B1EA5B50C008F9A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70879B391EA5B50C008F9A02 /* Main.storyboard */; };
 		70879B3D1EA5B50C008F9A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70879B3C1EA5B50C008F9A02 /* Assets.xcassets */; };
@@ -34,6 +38,8 @@
 		70879B9E1EA61EE2008F9A02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B9D1EA61EE2008F9A02 /* LoginViewController.swift */; };
 		70879BA01EA640E4008F9A02 /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B9F1EA640E4008F9A02 /* WBUserAccount.swift */; };
 		70A4E6EA1EA65BB600CF9E74 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4E6E91EA65BB600CF9E74 /* WBStatus.swift */; };
+		70FD4A961EAA13370008903B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD4A951EAA13370008903B /* String+extension.swift */; };
+		70FD4A981EAA512A0008903B /* StatusPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD4A971EAA512A0008903B /* StatusPicView.swift */; };
 		D915DF9E8138604855B3762C /* Pods_SoolyWBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863261F819D4D403EFEC9BE7 /* Pods_SoolyWBTests.framework */; };
 		E768E3A642308D056FB18867 /* Pods_SoolyWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7E5CADC7C951B15D25E317 /* Pods_SoolyWB.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +75,10 @@
 		7010F3A01EA8E87C002CD908 /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		7010F3A21EA8E88F002CD908 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/SoolyWB-ehxhvzevwpkzguhjosfmfvubkqhf/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		7010F3A41EA8EE4B002CD908 /* UIColor+HexString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
+		703695D21EACE1120029834F /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		703695D31EACE1120029834F /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		70379AA01EAB121800CA42DA /* RepostStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepostStatusCell.xib; sourceTree = "<group>"; };
+		70379AA21EAB141300CA42DA /* toolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toolBarView.swift; sourceTree = "<group>"; };
 		70879B321EA5B50C008F9A02 /* SoolyWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70879B351EA5B50C008F9A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70879B3A1EA5B50C008F9A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +103,8 @@
 		70879B9D1EA61EE2008F9A02 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		70879B9F1EA640E4008F9A02 /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		70A4E6E91EA65BB600CF9E74 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
+		70FD4A951EAA13370008903B /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		70FD4A971EAA512A0008903B /* StatusPicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPicView.swift; sourceTree = "<group>"; };
 		75EA7C6DCC8B2806118E110C /* Pods-SoolyWBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWBUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWBUITests/Pods-SoolyWBUITests.release.xcconfig"; sourceTree = "<group>"; };
 		863261F819D4D403EFEC9BE7 /* Pods_SoolyWBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoolyWBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7E5CADC7C951B15D25E317 /* Pods_SoolyWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoolyWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,15 +160,19 @@
 			children = (
 				7010F3981EA89577002CD908 /* StatusTableViewCell.swift */,
 				7010F3991EA89577002CD908 /* StatusTableViewCell.xib */,
+				70379AA01EAB121800CA42DA /* RepostStatusCell.xib */,
+				70FD4A971EAA512A0008903B /* StatusPicView.swift */,
+				70379AA21EAB141300CA42DA /* toolBarView.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
 		};
-		7010F39C1EA8A2FF002CD908 /* ViewModel */ = {
+		7010F39C1EA8A2FF002CD908 /* ViewModel(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
 				7010F39D1EA8A317002CD908 /* WBStatusViewModel.swift */,
 			);
+			name = "ViewModel(视图模型)";
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -165,6 +181,7 @@
 			children = (
 				7010F3A01EA8E87C002CD908 /* UIImageView+WebImage.swift */,
 				7010F3A41EA8EE4B002CD908 /* UIColor+HexString.swift */,
+				70FD4A951EAA13370008903B /* String+extension.swift */,
 			);
 			name = "extentions(拓展)";
 			path = extentions;
@@ -201,7 +218,7 @@
 				70879B941EA61D02008F9A02 /* Discover */,
 				70879B951EA61D0B008F9A02 /* Profile */,
 				70879B9A1EA61D22008F9A02 /* Model */,
-				7010F39C1EA8A2FF002CD908 /* ViewModel */,
+				7010F39C1EA8A2FF002CD908 /* ViewModel(视图模型) */,
 				70879B961EA61D12008F9A02 /* Other */,
 				70879B971EA61D1A008F9A02 /* Tools(工具) */,
 				70879B351EA5B50C008F9A02 /* AppDelegate.swift */,
@@ -256,6 +273,8 @@
 			children = (
 				7010F3971EA89542002CD908 /* cell */,
 				70879B911EA61CD5008F9A02 /* HomeViewController.swift */,
+				703695D21EACE1120029834F /* ComposeViewController.swift */,
+				703695D31EACE1120029834F /* ComposeViewController.xib */,
 			);
 			name = "Home(主页)";
 			path = Home;
@@ -447,7 +466,9 @@
 				7010F39B1EA89577002CD908 /* StatusTableViewCell.xib in Resources */,
 				70879B401EA5B50C008F9A02 /* LaunchScreen.storyboard in Resources */,
 				70879B3D1EA5B50C008F9A02 /* Assets.xcassets in Resources */,
+				70379AA11EAB121800CA42DA /* RepostStatusCell.xib in Resources */,
 				70879B3B1EA5B50C008F9A02 /* Main.storyboard in Resources */,
+				703695D51EACE1120029834F /* ComposeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,9 +633,11 @@
 			files = (
 				70879B9E1EA61EE2008F9A02 /* LoginViewController.swift in Sources */,
 				7010F3A11EA8E87C002CD908 /* UIImageView+WebImage.swift in Sources */,
+				70379AA31EAB141300CA42DA /* toolBarView.swift in Sources */,
 				70879B9C1EA61D7F008F9A02 /* Header.swift in Sources */,
 				70879B7E1EA5E0AD008F9A02 /* BasicViewController.swift in Sources */,
 				70879B801EA5E0AD008F9A02 /* WBNavigationController.swift in Sources */,
+				70FD4A961EAA13370008903B /* String+extension.swift in Sources */,
 				70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */,
 				7010F3A51EA8EE4B002CD908 /* UIColor+HexString.swift in Sources */,
 				7010F39E1EA8A317002CD908 /* WBStatusViewModel.swift in Sources */,
@@ -623,9 +646,11 @@
 				70A4E6EA1EA65BB600CF9E74 /* WBStatus.swift in Sources */,
 				7010F3941EA88A0C002CD908 /* PullUpView.swift in Sources */,
 				7010F39A1EA89577002CD908 /* StatusTableViewCell.swift in Sources */,
+				703695D41EACE1120029834F /* ComposeViewController.swift in Sources */,
 				70879B811EA5E0AD008F9A02 /* WBTabBarItemContentView.swift in Sources */,
 				70879B921EA61CD5008F9A02 /* HomeViewController.swift in Sources */,
 				70879BA01EA640E4008F9A02 /* WBUserAccount.swift in Sources */,
+				70FD4A981EAA512A0008903B /* StatusPicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="337" id="KGk-i7-Jjw" customClass="StatusTableViewCell" customModule="SoolyWB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="528" height="337"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="325" id="KGk-i7-Jjw" customClass="StatusTableViewCell" customModule="SoolyWB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="479" height="325"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="528" height="337"/>
+                <rect key="frame" x="0.0" y="0.0" width="479" height="325"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ea-mP-VgK" userLabel="头像">
@@ -57,11 +57,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGV-Zx-evD" userLabel="被转发微博背景按钮">
+                        <rect key="frame" x="0.0" y="88" width="479" height="201.5"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rld-0t-rGD" userLabel="配图" customClass="StatusPicView" customModule="SoolyWB" customModuleProvider="target">
+                        <rect key="frame" x="12" y="129" width="455" height="160.5"/>
+                        <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-cx-Mfn" userLabel="被转发文本">
+                        <rect key="frame" x="12" y="100" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO1-LW-F2b" userLabel="工具栏" customClass="toolBarView" customModule="SoolyWB" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="301.5" width="528" height="35"/>
+                        <rect key="frame" x="0.0" y="289.5" width="479" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhy-hI-63w">
-                                <rect key="frame" x="176" y="0.0" width="176" height="35"/>
+                                <rect key="frame" x="159.5" y="0.0" width="160" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="评论" image="comment">
@@ -69,7 +83,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAE-01-u6i">
-                                <rect key="frame" x="0.0" y="0.0" width="176" height="35"/>
+                                <rect key="frame" x="0.0" y="0.0" width="159.5" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="转发" image="repose">
@@ -77,7 +91,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZU-p5-13D">
-                                <rect key="frame" x="352" y="0.0" width="176" height="35"/>
+                                <rect key="frame" x="319.5" y="0.0" width="159.5" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="赞" image="like">
@@ -102,36 +116,29 @@
                             <constraint firstItem="hAE-01-u6i" firstAttribute="leading" secondItem="qO1-LW-F2b" secondAttribute="leading" id="wxW-yh-SS5"/>
                         </constraints>
                         <connections>
-                            <outlet property="commentBtn" destination="Hhy-hI-63w" id="apR-Y5-tVe"/>
-                            <outlet property="likeBtn" destination="9ZU-p5-13D" id="AUb-jY-Tt8"/>
-                            <outlet property="repostBtn" destination="hAE-01-u6i" id="lAF-0g-GgR"/>
+                            <outlet property="commentBtn" destination="Hhy-hI-63w" id="Cf1-8g-pIh"/>
+                            <outlet property="likeBtn" destination="9ZU-p5-13D" id="9h5-El-AUA"/>
+                            <outlet property="repostBtn" destination="hAE-01-u6i" id="dO9-EE-eUN"/>
                         </connections>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeA-Q3-yGo" userLabel="分割线">
-                        <rect key="frame" x="12" y="300.5" width="504" height="0.5"/>
-                        <color key="backgroundColor" red="0.86004575787995885" green="0.86856106241342379" blue="0.86856106241342379" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="0.5" id="wTd-F4-F9u"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rld-0t-rGD" userLabel="配图" customClass="StatusPicView" customModule="SoolyWB" customModuleProvider="target">
-                        <rect key="frame" x="12" y="88" width="504" height="213.5"/>
-                        <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Rld-0t-rGD" firstAttribute="top" secondItem="Nux-i5-hTS" secondAttribute="bottom" constant="12" id="5J6-Oj-zKR"/>
+                    <constraint firstItem="qO1-LW-F2b" firstAttribute="top" secondItem="Rld-0t-rGD" secondAttribute="bottom" id="3Fi-nn-Qti"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Nux-i5-hTS" secondAttribute="trailing" constant="12" id="5ib-7x-yD9"/>
+                    <constraint firstItem="qO1-LW-F2b" firstAttribute="top" secondItem="WGV-Zx-evD" secondAttribute="bottom" id="6Wp-vM-qrB"/>
                     <constraint firstAttribute="bottom" secondItem="qO1-LW-F2b" secondAttribute="bottom" id="8I5-6q-mnE"/>
-                    <constraint firstItem="qO1-LW-F2b" firstAttribute="top" secondItem="yeA-Q3-yGo" secondAttribute="bottom" id="9iw-4n-PjG"/>
+                    <constraint firstItem="jkt-cx-Mfn" firstAttribute="leading" secondItem="Nux-i5-hTS" secondAttribute="leading" id="BEQ-Ql-nXh"/>
                     <constraint firstItem="jra-mt-gGV" firstAttribute="trailing" secondItem="6ea-mP-VgK" secondAttribute="trailing" constant="5" id="DFB-ej-2at"/>
+                    <constraint firstItem="WGV-Zx-evD" firstAttribute="top" secondItem="Nux-i5-hTS" secondAttribute="bottom" constant="12" id="DY0-sF-W2C"/>
+                    <constraint firstAttribute="trailing" secondItem="WGV-Zx-evD" secondAttribute="trailing" id="F9y-c2-lwW"/>
                     <constraint firstItem="XyR-T2-rfO" firstAttribute="leading" secondItem="8p2-jw-gfu" secondAttribute="trailing" constant="8" id="FFB-9k-fwZ"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jkt-cx-Mfn" secondAttribute="trailing" constant="12" id="IPw-9M-igD"/>
                     <constraint firstItem="qO1-LW-F2b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="J2X-K5-n4Y"/>
-                    <constraint firstItem="yeA-Q3-yGo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="NFQ-km-Tkp"/>
+                    <constraint firstItem="WGV-Zx-evD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JT4-IO-s77"/>
                     <constraint firstAttribute="trailing" secondItem="qO1-LW-F2b" secondAttribute="trailing" id="Ps4-Bd-hDz"/>
                     <constraint firstItem="jra-mt-gGV" firstAttribute="bottom" secondItem="6ea-mP-VgK" secondAttribute="bottom" constant="5" id="RHk-FU-2vM"/>
                     <constraint firstItem="XyR-T2-rfO" firstAttribute="centerY" secondItem="8p2-jw-gfu" secondAttribute="centerY" id="XDv-Va-hsz"/>
-                    <constraint firstAttribute="trailing" secondItem="yeA-Q3-yGo" secondAttribute="trailing" constant="12" id="aCW-FF-Ocx"/>
+                    <constraint firstItem="Rld-0t-rGD" firstAttribute="top" secondItem="jkt-cx-Mfn" secondAttribute="bottom" constant="12" id="dVf-SC-xkG"/>
                     <constraint firstItem="6ea-mP-VgK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="gjS-TW-KJR"/>
                     <constraint firstItem="8p2-jw-gfu" firstAttribute="bottom" secondItem="6ea-mP-VgK" secondAttribute="bottom" id="i6q-q0-ZUC"/>
                     <constraint firstItem="Rld-0t-rGD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="l4G-Sm-32Q"/>
@@ -142,7 +149,7 @@
                     <constraint firstItem="Nux-i5-hTS" firstAttribute="top" secondItem="6ea-mP-VgK" secondAttribute="bottom" constant="12" id="tba-jl-HK2"/>
                     <constraint firstAttribute="trailing" secondItem="Rld-0t-rGD" secondAttribute="trailing" constant="12" id="u2z-Ec-jNj"/>
                     <constraint firstItem="W0y-8F-cJv" firstAttribute="leading" secondItem="6ea-mP-VgK" secondAttribute="trailing" constant="12" id="u96-qN-vTf"/>
-                    <constraint firstItem="qO1-LW-F2b" firstAttribute="top" secondItem="Rld-0t-rGD" secondAttribute="bottom" id="wgj-MM-VgK"/>
+                    <constraint firstItem="jkt-cx-Mfn" firstAttribute="top" secondItem="WGV-Zx-evD" secondAttribute="top" constant="12" id="yVv-NT-B8P"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -150,12 +157,13 @@
                 <outlet property="iconView" destination="6ea-mP-VgK" id="F6k-u1-ylo"/>
                 <outlet property="nameLabel" destination="W0y-8F-cJv" id="UHN-vh-QQA"/>
                 <outlet property="picView" destination="Rld-0t-rGD" id="0M6-2Z-Ios"/>
+                <outlet property="repostLabel" destination="jkt-cx-Mfn" id="3nN-JU-sUg"/>
                 <outlet property="resourceLabel" destination="XyR-T2-rfO" id="7hk-4M-vYy"/>
                 <outlet property="statusLabel" destination="Nux-i5-hTS" id="ZDm-DL-9xJ"/>
                 <outlet property="timeLabel" destination="8p2-jw-gfu" id="loj-CR-QD8"/>
-                <outlet property="toolBar" destination="qO1-LW-F2b" id="pja-A6-cg3"/>
+                <outlet property="toolBar" destination="qO1-LW-F2b" id="Lt7-PN-fwu"/>
             </connections>
-            <point key="canvasLocation" x="-800" y="-88.5"/>
+            <point key="canvasLocation" x="-279.5" y="71.5"/>
         </tableViewCell>
     </objects>
     <resources>

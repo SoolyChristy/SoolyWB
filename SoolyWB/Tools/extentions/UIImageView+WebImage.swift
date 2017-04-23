@@ -12,7 +12,7 @@ import Kingfisher
 // MARK: - 隔离Kingfisher
 extension UIImageView {
     
-    func setImage(urlString: String?, placeholder: UIImage) {
+    func setImage(urlString: String?, placeholder: UIImage?) {
         
         let url = URL(string: urlString ?? "")
         kf.setImage(with: url, placeholder: placeholder)

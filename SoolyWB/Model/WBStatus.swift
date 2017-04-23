@@ -47,15 +47,15 @@ class WBStatus: HandyJSON{
 /// 图片模型
 struct picturesModel: HandyJSON {
     /// 缩略图
-    var thumbnail_pic: String? {
-        didSet {
-            large_pic = thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/large/")
-            thumbnail_pic = thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/wap360/")
-        }
+    var thumbnail_pic: String?
+    /// 中图
+    var bmiddle_pic: String? {
+        return thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/wap360/")
     }
-    
     /// 原图
-    var large_pic: String?
+    var large_pic: String? {
+        return thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/large/")
+    }
     
 //    required init() {}
     

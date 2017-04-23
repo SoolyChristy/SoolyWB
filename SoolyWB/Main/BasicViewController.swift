@@ -18,6 +18,9 @@ class BasicViewController: UIViewController {
     /// 是否是上拉刷新
     var isPullUp: Bool = false
     
+    var navigationBar = UINavigationBar()
+    var navItem = UINavigationItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +48,7 @@ extension BasicViewController {
      func setupUI() {
         view.backgroundColor = UIColor.white
         setupTabelView()
-    
+        
     }
     
      func setupTabelView() {

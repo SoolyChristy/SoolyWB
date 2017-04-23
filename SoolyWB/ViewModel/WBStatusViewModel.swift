@@ -19,12 +19,26 @@ class WBStatusViewModel {
     /// 点赞数量文本
     var likeStr: String
     /// 微博来源
-    var source: String
+    var source: String?
     /// 微博发布时间
-    var time: String
+    var time: String?
     
     /// 认证图片
     var avatarImage: UIImage?
+    
+    var picUrls: [picturesModel]? {
+        
+        if status.retweeted_status == nil {
+            return status.pic_urls
+        } else {
+            return status.retweeted_status?.pic_urls
+        }
+    }
+    
+    /// 图片视图高度
+    var picViewHeight: CGFloat?
+    /// 行高
+    var rowHeight: CGFloat?
     
     init(model: WBStatus) {
         
@@ -32,28 +46,105 @@ class WBStatusViewModel {
         
         repostStr = model.reposts_count == 0 ? "转发" : "\(model.reposts_count)"
         commentStr = model.comments_count == 0 ? "评论" : "\(model.comments_count)"
-        likeStr = model.attitudes_count == 0 ? "赞" : "\(model.attitudes_count)"
-        source = setupSource(str: model.source)
+        likeStr = model.attitudes_count == 0 ? "" : "\(model.attitudes_count)"
         
-        avatarImage = setupAvatarImage(model.user?.verified_type ?? -1)
+        // 根据模型数据 设置来源
+        source = setupSource()
+        
+        // 根据模型数据 设置时间文本
+        time = setupTime()
+        
+        // 根据模型数据 设置认证图标
+        avatarImage = self.setupAvatarImage()
+        
+        // 计算图片视图高度
+        picViewHeight = setupPicViewHeight()
+        
+        // 计算行高
+        rowHeight = setupRowHeight()
     }
 }
 
 extension WBStatusViewModel {
     
-    func setupTime() {
+    /// 根据服务器传回的日期格式转为目标格式
+    /// 示例： Tue May 31 17:46:55 +0800 2011
+    /**
+     刚刚(一分钟内)
+     X分钟前(一小时内)
+     X小时前(当天)
+     昨天 HH:mm(昨天)
+     MM-dd HH:mm(一年内)
+     yyyy-MM-dd HH:mm(更早期)
+     */
+
+    func setupTime() -> String {
+        
+        /// 日期格式器
+        let dateFomatter = DateFormatter()
+        dateFomatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFomatter.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
+        dateFomatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        /// 微博发布日期
+        guard let creatDate = dateFomatter.date(from: status.created_at ?? "") else {
+            return ""
+        }
+
+        /// 当前日历对象
+        let calendar = Calendar.current
+        
+        // 判断日期是否是今天
+        if calendar.isDateInToday(creatDate) {
+            /// 微博创建时间与此时的时间差(秒) 负数
+            let delta = -Int(creatDate.timeIntervalSinceNow)
+            
+            if delta < 60 {
+                return "刚刚"
+            }
+            
+            if delta < 3600 {
+                let m: Int = delta / 60
+                return "\(m)分钟前"
+            }
+            
+            let h: Int = delta / 3600
+            return "\(h)小时前"
+        }
+        
+        var fmt = "HH:mm"
+        
+        if calendar.isDateInYesterday(creatDate) {
+            fmt = "昨天" + fmt
+        } else {
+            fmt = "MM-dd HH:mm"
+            let year = calendar.component(.year, from: creatDate)
+            let thisYear = calendar.component(.year, from: Date())
+            
+            if year != thisYear {
+                fmt = "yyyy-" + fmt
+            }
+        }
+        
+        dateFomatter.dateFormat = fmt
+        
+        return dateFomatter.string(from: creatDate)
         
     }
     
-    func setupSource(str: String?) -> String {
-        return str ?? ""
+    func setupSource() -> String {
+        let source = "来自 " + (status.source?.a_href()?.text ?? "")
+        return source
     }
     
     /// 设置认证图片
     ///
     /// - Parameter type: 认证类型
     /// - Returns: 认证图片
-    func setupAvatarImage(_ type: Int) -> UIImage? {
+    func setupAvatarImage() -> UIImage? {
+        
+        let type = status.user?.verified_type ?? 0
+        
         switch type {
         case -1:
             return nil
@@ -66,5 +157,85 @@ extension WBStatusViewModel {
         default:
             return nil
         }
+    }
+}
+
+// MARK: 计算高度
+extension WBStatusViewModel {
+    
+    /// 计算图片视图的高度
+    func setupPicViewHeight() -> CGFloat {
+        guard let picCount = picUrls?.count else {
+            return 0
+        }
+        
+        if picCount == 0 {
+            return 0
+        }
+        
+        if picCount < 4 {
+            return picWH + margin
+        }
+        
+        if picCount < 7 {
+            return picWH * 2 + picMargin + margin
+        } else {
+            return picWH * 3 + 2 * picMargin + margin
+        }
+
+    }
+    
+    // 计算行高
+    func setupRowHeight() -> CGFloat {
+        let iconH: CGFloat = 34
+        var height: CGFloat = 0
+        /// 正文文本size 如果使用原始宽度 可能计算不准确，需要减 5 或者 10
+        let textViewSize = CGSize(width: screenWidth - 2 * margin - 5, height: CGFloat(MAXFLOAT))
+        
+        // 顶部高度
+        height = iconH + 2 * margin
+        
+        // 微博正文高度
+        if let text = status.text {
+            let l = UILabel()
+            l.text = text
+            l.numberOfLines = 0
+            l.font = UIFont.systemFont(ofSize: 15)
+            let textH = ceil(l.sizeThatFits(textViewSize).height) + 1
+//            let textH = (text as NSString).boundingRect(with: textViewSize, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15)], context: nil).height
+            
+            height += textH
+        }
+        
+        // 间距
+        height += margin
+        
+        // 如果有转发微博
+        if let repostStatus = status.retweeted_status {
+            height += margin
+            
+            // 转发文本
+            let l = UILabel()
+            l.text = repostStatus.text ?? ""
+            l.numberOfLines = 0
+            l.font = UIFont.systemFont(ofSize: 14)
+            //            l.lineBreakMode = .byTruncatingTail
+            let textH = ceil(l.sizeThatFits(textViewSize).height) + 1
+//            let text = repostStatus.text ?? ""
+//            let textH = (text as NSString).boundingRect(with: textViewSize, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14)], context: nil).height
+            height += textH
+            
+            height += margin
+        }
+        
+        // 配图
+        if picUrls?.count != 0 && picUrls?.count != nil {
+            height += picViewHeight ?? 0
+        }
+        
+        // 工具条
+        height += 35
+        
+        return height
     }
 }

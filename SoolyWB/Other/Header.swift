@@ -21,6 +21,12 @@ let screenHeight = UIScreen.main.bounds.height
 let docPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
 
 // cell间隔背景颜色
-let footerViewBgColor = UIColor.color(hex: "#EAEAEA")
+let footerViewBgColor = UIColor.color(hex: "#efeff4")
 /// section间距
 let cellMargin: CGFloat = 8
+/// 微博配图间距
+let picMargin: CGFloat = 5
+/// 配图视图 宽 高
+let picWH = (screenWidth - 2 * picMargin - 2 * 12) / 3
+/// 间距
+let margin: CGFloat = 12

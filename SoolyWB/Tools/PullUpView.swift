@@ -16,5 +16,9 @@ class PullUpView: UIView {
     class func pullUpView() -> PullUpView {
         return Bundle.main.loadNibNamed("PullUpView", owner: nil, options: nil)?.last as! PullUpView
     }
+    
+    override func awakeFromNib() {
+        indicator.isHidden = true
+    }
 
 }
