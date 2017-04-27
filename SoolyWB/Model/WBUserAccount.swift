@@ -71,12 +71,16 @@ class WBUserAccount: HandyJSON {
 struct WBUserInfo: HandyJSON {
     /// 用户昵称
     var screen_name: String?
+    
     /// 用户所在地
     var location: String?
+    
     /// 用户头像地址（中图），50×50像素
     var profile_image_url: String?
+    
     /// 用户头像地址（大图），180×180像素
     var avatar_large: String?
+    
     /// 用户头像地址（高清），高清头像原图
     var avatar_hd: String?
     /// 性别，m：男、f：女、n：未知

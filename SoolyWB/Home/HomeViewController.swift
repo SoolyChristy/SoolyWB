@@ -18,12 +18,14 @@ class HomeViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 }
 
 // MARK: 加载数据
 extension HomeViewController {
     override func loadData() {
+        super.loadData()
         
         // 如果是上拉刷新
         if isPullUp {
@@ -68,6 +70,7 @@ extension HomeViewController {
                 
                 return
             }
+            
             // 将最新微博数据模型 置入 模型数组头部
             self.statusVMs = statuses + self.statusVMs
             
@@ -83,12 +86,13 @@ extension HomeViewController {
     
     override func setupUI() {
         super.setupUI()
+        setTitleBtn(tilte: "特别关心")
         setupComposeButton()
     }
     
     override func setupTabelView() {
         super.setupTabelView()
-        
+
         tabelView.register(UINib(nibName: "StatusTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: statusCellID)
         tabelView.register(UINib(nibName: "RepostStatusCell", bundle: Bundle.main), forCellReuseIdentifier: repostCellID)
         

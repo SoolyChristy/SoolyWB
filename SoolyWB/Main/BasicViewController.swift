@@ -18,27 +18,41 @@ class BasicViewController: UIViewController {
     /// 是否是上拉刷新
     var isPullUp: Bool = false
     
+    /// 自定义导航条
     var navigationBar = UINavigationBar()
+    
     var navItem = UINavigationItem()
+    var titleBtn = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: Notification.Name(rawValue: loginSuccessful), object: nil)
         
         // 判断是否登录
         if !NetWorkManager.shared.isUserLogin {
-            self.navigationController?.present(WBNavigationController(rootViewController: LoginViewController()), animated: false)
+            
+            present(LoginViewController(), animated: false)
+            
+            setupUI()
+            return
         }
         
+        setupUI()
         loadData()
+        
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 // MARK: 加载数据
 extension BasicViewController {
      func loadData() {
+        // 获取登录用户账户信息
+        NetWorkManager.shared.getUserInfo()
         
     }
 }
@@ -47,12 +61,36 @@ extension BasicViewController {
 extension BasicViewController {
      func setupUI() {
         view.backgroundColor = UIColor.white
-        setupTabelView()
         
+        // 取消自动缩进 - 如果隐藏了导航栏，会缩进 20 个点
+        automaticallyAdjustsScrollViewInsets = false
+        
+        setupNavigationBar()
+        setupTabelView()
+    }
+    
+    func setupNavigationBar() {
+        
+        navigationBar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 76)
+        
+        setTitleBtn(tilte: "")
+        
+        navItem.leftBarButtonItem = UIBarButtonItem(customView: titleBtn)
+        
+        view.addSubview(navigationBar)
+        navigationBar.items = [navItem]
+        
+        // 取消底部黑线
+        navigationBar.setBackgroundImage(UIImage.getImage(color: UIColor.white), for: .default)
+        navigationBar.shadowImage = UIImage()
+        
+        navigationBar.barTintColor = UIColor.white
+        navigationBar.tintColor = UIColor.black
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
     }
     
      func setupTabelView() {
-        tabelView.frame = view.frame
+        tabelView.frame = CGRect(x: 0, y: 88, width: screenWidth, height: screenHeight)
         tabelView.backgroundColor = UIColor.white
         tabelView.delegate = self
         tabelView.dataSource = self
@@ -66,9 +104,17 @@ extension BasicViewController {
         tabelView.tableFooterView = pullUpView
         
         // 设置内容缩进
-//        tabelView.contentInset = UIEdgeInsetsMake(0, 0, self.tabBarController?.tabBar.bounds.height ?? 49, 0)
+//        tabelView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
         
-        view.addSubview(tabelView)
+//        view.addSubview(tabelView)
+        view.insertSubview(tabelView, belowSubview: navigationBar)
+    }
+    
+    /// 设置title按钮
+    func setTitleBtn(tilte: String) {
+        let str = NSAttributedString(string: tilte, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 30)])
+        titleBtn.setAttributedTitle(str, for: [])
+        titleBtn.sizeToFit()
     }
 }
 

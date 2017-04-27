@@ -63,6 +63,7 @@ extension NetWorkManager {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         guard let accessToken = userAccount.access_token else {
+            print("请求微博数据失败！ - toke为空")
             return
         }
         
@@ -101,6 +102,29 @@ extension NetWorkManager {
             }
         }
     }
+    
+    /// 发布一条纯文本微博
+    ///
+    /// - Parameters:
+    ///   - status: 微博内容
+    ///   - compeletion: 完成回调(微博模型，是否成功)
+    func updateStatus(status: String, compeletion: @escaping (_ status: WBStatus?, _ isSuccess: Bool) -> ()) {
+        let urlStr = "https://api.weibo.com/2/statuses/update.json"
+        let parameters = ["access_token": userAccount.access_token ?? "",
+                          "status": status]
+        
+        request(urlString: urlStr, method: .POST, parameters: parameters) { (json, isSuccess) in
+            guard let dic = json as NSDictionary? else {
+                print("发布微博失败！")
+                compeletion(nil, false)
+                return
+            }
+            let status = WBStatus.deserialize(from: dic)
+            
+            compeletion(status, true)
+            
+        }
+    }
 }
 
 // MARK: OAuth授权相关方法
@@ -117,10 +141,9 @@ extension NetWorkManager {
         
         request(urlString: urlString, method: .POST, parameters: parameters) { (json, isSuccess) in
             
-            compeletion(isSuccess)
-            
             guard let json = json as NSDictionary? else {
                 print("AccessToken为空")
+                compeletion(false)
                 return
             }
             print("授权登录信息 - \(json)")
@@ -129,9 +152,9 @@ extension NetWorkManager {
             self.userAccount = WBUserAccount.deserialize(from: json) ?? WBUserAccount()
             self.userAccount.expiredDate = Date(timeIntervalSinceNow: self.userAccount.expires_in)
             
-            // 登录成功后立即获取登录用户信息
-            self.getUserInfo()
+            compeletion(true)
         }
+        
     }
 }
 

@@ -20,9 +20,9 @@ class MainViewController: ESTabBarController {
     private func setupChildViewControllers() {
         
         let home = WBNavigationController(rootViewController: HomeViewController())
-        let message = WBNavigationController(rootViewController: BasicViewController())
-        let discover = WBNavigationController(rootViewController: BasicViewController())
-        let profile = WBNavigationController(rootViewController: BasicViewController())
+        let message = WBNavigationController(rootViewController: MessageViewController())
+        let discover = WBNavigationController(rootViewController: DiscoverViewController())
+        let profile = WBNavigationController(rootViewController: ProfileViewController())
         
         home.tabBarItem = ESTabBarItem(WBTabBarItemContentView(), title: nil, image: #imageLiteral(resourceName: "tabbar_home"), selectedImage: #imageLiteral(resourceName: "tabbar_home_selected"), tag: 0)
         message.tabBarItem = ESTabBarItem(WBTabBarItemContentView(), title: nil, image: #imageLiteral(resourceName: "tabbar_message_center"), selectedImage: #imageLiteral(resourceName: "tabbar_message_center_selected"), tag: 1)

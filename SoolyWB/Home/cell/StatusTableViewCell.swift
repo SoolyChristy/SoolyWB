@@ -37,14 +37,13 @@ class StatusTableViewCell: UITableViewCell {
             timeLabel.text = viewModel?.time
             resourceLabel.text = viewModel?.source
             avatarIcon.image = viewModel?.avatarImage
-            statusLabel.text = viewModel?.status.text
-            
+            statusLabel.attributedText = viewModel?.textAttributedStr
             toolBar.viewModel = viewModel
             picView.viewModel = viewModel
             
             // 设置转发微博
-            if let repostStatus = viewModel?.status.retweeted_status {
-                repostLabel.text = "@\(repostStatus.user?.screen_name ?? ""): \(repostStatus.text ?? "")"
+            if let repostAttr = viewModel?.repostTextAttr {
+                repostLabel.attributedText = repostAttr
             }
         }
     }

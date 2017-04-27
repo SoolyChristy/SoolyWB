@@ -26,6 +26,7 @@ class WBStatusViewModel {
     /// 认证图片
     var avatarImage: UIImage?
     
+    /// 图片url数组
     var picUrls: [picturesModel]? {
         
         if status.retweeted_status == nil {
@@ -34,6 +35,11 @@ class WBStatusViewModel {
             return status.retweeted_status?.pic_urls
         }
     }
+    
+    /// 正文属性文本
+    var textAttributedStr: NSAttributedString?
+    /// 转发属性文本
+    var repostTextAttr: NSAttributedString?
     
     /// 图片视图高度
     var picViewHeight: CGFloat?
@@ -60,8 +66,18 @@ class WBStatusViewModel {
         // 计算图片视图高度
         picViewHeight = setupPicViewHeight()
         
+        // 正文属性文本
+        textAttributedStr = setupTextAttributedString(string: model.text, font: originalTextFont)
+        
+        // 转发属性文本
+        if let repostStr = model.retweeted_status?.text {
+            let string = "@\(model.retweeted_status?.user?.screen_name ?? ""):\(repostStr)"
+            repostTextAttr = setupTextAttributedString(string: string, font: repostTextFont)
+        }
+        
         // 计算行高
         rowHeight = setupRowHeight()
+
     }
 }
 
@@ -158,6 +174,15 @@ extension WBStatusViewModel {
             return nil
         }
     }
+    
+    /// 设置文字属性文本
+    func setupTextAttributedString(string: String?, font: UIFont) -> NSAttributedString? {
+        guard let string = string else {
+            return nil
+        }
+        
+        return WBEmoticonManager.shared.emoticonAttrubuteString(string: string, font: font)
+    }
 }
 
 // MARK: 计算高度
@@ -198,35 +223,43 @@ extension WBStatusViewModel {
         // 微博正文高度
         if let text = status.text {
             let l = UILabel()
-            l.text = text
+            l.attributedText = textAttributedStr
             l.numberOfLines = 0
             l.font = UIFont.systemFont(ofSize: 15)
             let textH = ceil(l.sizeThatFits(textViewSize).height) + 1
-//            let textH = (text as NSString).boundingRect(with: textViewSize, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15)], context: nil).height
             
             height += textH
         }
+//        if let textAttr = textAttributedStr {
+//            let h = textAttr.boundingRect(with: textViewSize, options: .usesLineFragmentOrigin, context: nil).height
+//            print("\(status.user?.screen_name ?? "")正文 - \(h)")
+//            height += h
+//        }
         
         // 间距
         height += margin
         
         // 如果有转发微博
-        if let repostStatus = status.retweeted_status {
+        if status.retweeted_status != nil {
             height += margin
             
             // 转发文本
             let l = UILabel()
-            l.text = repostStatus.text ?? ""
+            l.attributedText = repostTextAttr
             l.numberOfLines = 0
             l.font = UIFont.systemFont(ofSize: 14)
             //            l.lineBreakMode = .byTruncatingTail
             let textH = ceil(l.sizeThatFits(textViewSize).height) + 1
-//            let text = repostStatus.text ?? ""
-//            let textH = (text as NSString).boundingRect(with: textViewSize, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14)], context: nil).height
+
             height += textH
             
             height += margin
         }
+//        if let repostAttr = repostTextAttr {
+//            let h = repostAttr.boundingRect(with: textViewSize, options: .usesLineFragmentOrigin, context: nil).height
+//            print("\(status.retweeted_status?.user?.screen_name ?? "")转发 - \(h)")
+//            height += h
+//        }
         
         // 配图
         if picUrls?.count != 0 && picUrls?.count != nil {

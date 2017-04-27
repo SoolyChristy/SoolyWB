@@ -8,6 +8,7 @@
 
 import UIKit
 import HandyJSON
+import PKHUD
 
 class LoginViewController: UIViewController {
 
@@ -47,6 +48,9 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        
+        HUD.hide()
+        
         // 自动填充
         // 准备 js
         let js = "document.getElementById('userId').value = '13007157719'; " +
@@ -79,17 +83,20 @@ extension LoginViewController: UIWebViewDelegate {
         // 获取AccessToken
         NetWorkManager.shared.getAccessToken(code: code) { (isSuccess) in
             if isSuccess {
-                NetWorkManager.shared.loadStatuses(sinceID: 0, maxID: 0, compeletion: { (json, isSuccess) in
-                   
-                })
+                // 登录成功 发送通知
+                NotificationCenter.default.post(name: Notification.Name(rawValue: loginSuccessful), object: nil)
             }
         }
         
-        self.dismiss(animated: true) { 
-            
+        self.dismiss(animated: true) {
+            HUD.hide()
         }
         
         return false
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        HUD.show(.progress)
     }
     
 }

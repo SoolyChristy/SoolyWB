@@ -10,7 +10,7 @@ import UIKit
 
 
 extension UIColor {
-    // MARK:- 把#ffffff颜色转为UIColor
+    /// MARK:- 把#ffffff颜色转为UIColor
     class func color(hex:String) ->UIColor {
         
         var cString = hex.trimmingCharacters(in:CharacterSet.whitespacesAndNewlines).uppercased()

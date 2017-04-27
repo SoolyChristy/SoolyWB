@@ -12,8 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="SoolyWB" customModuleProvider="target">
             <connections>
+                <outlet property="iconView" destination="tI3-SP-i5R" id="ClT-S9-fff"/>
                 <outlet property="sendBtn" destination="9u9-wf-cOi" id="fWH-qt-zfd"/>
                 <outlet property="textView" destination="qhh-eO-x2g" id="jXu-aZ-AJ0"/>
+                <outlet property="toolBar" destination="3wu-DW-NqT" id="I0m-QY-NY9"/>
+                <outlet property="toolBarY" destination="aSJ-Zw-lpf" id="YoS-Se-QfC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,33 +25,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naq-rf-rHA" userLabel="上阴影">
-                    <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naq-rf-rHA" userLabel="上阴影">
+                    <rect key="frame" x="0.0" y="64" width="375" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="PUy-uL-hpn"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdg-7h-2zO" userLabel="底部工具栏">
-                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="Nsr-JH-ubF"/>
-                    </constraints>
-                </view>
                 <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJ0-p6-bsX" userLabel="下阴影">
-                    <rect key="frame" x="0.0" y="622" width="375" height="1"/>
+                    <rect key="frame" x="0.0" y="623" width="375" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="nW6-BH-FgZ"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qhh-eO-x2g">
-                    <rect key="frame" x="0.0" y="65" width="375" height="557"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qhh-eO-x2g" customClass="ComposeTextView" customModule="SoolyWB" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="65" width="375" height="558"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Cv6-rq-4tP"/>
+                    </connections>
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD4-Hf-dEW" userLabel="顶部工具栏">
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -93,22 +91,26 @@
                         <constraint firstItem="9u9-wf-cOi" firstAttribute="trailing" secondItem="iD4-Hf-dEW" secondAttribute="trailingMargin" constant="-15" id="t7E-RB-dth"/>
                     </constraints>
                 </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wu-DW-NqT">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <items/>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="3wu-DW-NqT" secondAttribute="trailing" id="2ib-Qx-f0h"/>
                 <constraint firstItem="naq-rf-rHA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2mA-vQ-IHO"/>
                 <constraint firstItem="qhh-eO-x2g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ax7-w8-B4Y"/>
-                <constraint firstAttribute="bottom" secondItem="hdg-7h-2zO" secondAttribute="bottom" id="DJm-q8-vLe"/>
+                <constraint firstItem="3wu-DW-NqT" firstAttribute="top" secondItem="qhh-eO-x2g" secondAttribute="bottom" id="BOE-Ia-eGa"/>
                 <constraint firstAttribute="trailing" secondItem="qJ0-p6-bsX" secondAttribute="trailing" id="DQf-LS-Gqv"/>
+                <constraint firstItem="3wu-DW-NqT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ENG-Cd-3PK"/>
                 <constraint firstItem="qJ0-p6-bsX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IOz-qR-u2c"/>
-                <constraint firstItem="hdg-7h-2zO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SUE-DU-IM1"/>
                 <constraint firstItem="iD4-Hf-dEW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="To1-hy-ha6"/>
                 <constraint firstAttribute="trailing" secondItem="iD4-Hf-dEW" secondAttribute="trailing" id="U6L-el-RaR"/>
-                <constraint firstAttribute="trailing" secondItem="hdg-7h-2zO" secondAttribute="trailing" id="all-Pq-VmU"/>
+                <constraint firstAttribute="bottom" secondItem="3wu-DW-NqT" secondAttribute="bottom" id="aSJ-Zw-lpf"/>
                 <constraint firstItem="naq-rf-rHA" firstAttribute="top" secondItem="iD4-Hf-dEW" secondAttribute="bottom" id="c1a-xO-VfS"/>
                 <constraint firstAttribute="trailing" secondItem="qhh-eO-x2g" secondAttribute="trailing" id="ceL-2j-KVH"/>
                 <constraint firstItem="qJ0-p6-bsX" firstAttribute="top" secondItem="qhh-eO-x2g" secondAttribute="bottom" id="cob-gN-ldC"/>
-                <constraint firstItem="hdg-7h-2zO" firstAttribute="top" secondItem="qJ0-p6-bsX" secondAttribute="bottom" id="gYa-fw-rGq"/>
                 <constraint firstItem="iD4-Hf-dEW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="k6r-ax-m2F"/>
                 <constraint firstItem="qhh-eO-x2g" firstAttribute="top" secondItem="naq-rf-rHA" secondAttribute="bottom" id="oU1-sn-PW8"/>
                 <constraint firstAttribute="trailing" secondItem="naq-rf-rHA" secondAttribute="trailing" id="rBd-8h-K0C"/>

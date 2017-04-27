@@ -13,6 +13,9 @@ let appSecret = "2b473b02322fb48cdbfb3faf1285fff2"
 /// 回调url
 let redirect_uri = "https://www.baidu.com"
 
+/// 登录成功通知
+let loginSuccessful = "loginSuccessful"
+
 let screenBounds = UIScreen.main.bounds
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
@@ -30,3 +33,8 @@ let picMargin: CGFloat = 5
 let picWH = (screenWidth - 2 * picMargin - 2 * 12) / 3
 /// 间距
 let margin: CGFloat = 12
+
+/// 原创微博字体
+let originalTextFont = UIFont.systemFont(ofSize: 15)
+/// 转发微博字体
+let repostTextFont = UIFont.systemFont(ofSize: 14)
