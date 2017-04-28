@@ -221,7 +221,7 @@ extension WBStatusViewModel {
         height = iconH + 2 * margin
         
         // 微博正文高度
-        if let text = status.text {
+        if status.text != nil {
             let l = UILabel()
             l.attributedText = textAttributedStr
             l.numberOfLines = 0

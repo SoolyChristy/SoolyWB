@@ -35,6 +35,7 @@ class ComposeTextView: UITextView {
 }
 
 extension ComposeTextView {
+    // MARK: 将表情插入 textView
     func insertEmoticon(emoticon: WBEmoticon) {
         // 若是emoji UITextRange 只用于此处
         if let emoji = emoticon.getEmoji(), let selectedTextRange = selectedTextRange {

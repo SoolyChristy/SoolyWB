@@ -10,8 +10,14 @@ import UIKit
 
 private let cellID = "emotionCell"
 
+/// EmoticonInputView代理协议
 protocol EmoticonInputViewDelegate: NSObjectProtocol {
-    
+    /// 点击键盘按钮
+    func emoticonViewDidSelectedKeyboardButton()
+    /// 点击退格按钮
+    func emoticonViewDidSelectedDelButton()
+    /// 点击表情
+    func emoticonViewDidSelectedEmoticon(emoticon: WBEmoticon)
 }
 
 class EmoticonInputView: UIView {
@@ -20,25 +26,29 @@ class EmoticonInputView: UIView {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var toolBar: EmoticonToolBar!
-   
-    /// 点击表情回调
-    var emoticonCallBack: ((_ emoticon: WBEmoticon) -> ())?
     
     /// 快速创建EmoticonInputView
-    ///
-    /// - Parameter emoticonClick: 点击表情回调
-    ///
-    class func inputView(emoticonClick: @escaping (_ emoticon: WBEmoticon) -> ()) -> EmoticonInputView {
+    class func inputView() -> EmoticonInputView {
         let v = Bundle.main.loadNibNamed("EmoticonInputView", owner: nil, options: nil)?[0] as! EmoticonInputView
-        
-        // 记录闭包
-        v.emoticonCallBack = emoticonClick
         
         return v
     }
 
     override func awakeFromNib() {
         setupUI()
+        
+        // 记录闭包 (注意循环引用)
+        toolBar.btnClickCallBack = { [weak self] (type) in
+            switch type {
+            case .keyboard:
+                self?.delegate?.emoticonViewDidSelectedKeyboardButton()
+            case .del:
+                self?.delegate?.emoticonViewDidSelectedDelButton()
+            default:
+                break
+            }
+        }
+        
     }
     
 }
@@ -81,7 +91,7 @@ extension EmoticonInputView: UICollectionViewDataSource, UICollectionViewDelegat
 // MARK: EmoticonCell代理方法
 extension EmoticonInputView: EmoticonCellDelegate {
     func emoticonClick(emoticon: WBEmoticon) {
-        // 执行回调
-        emoticonCallBack?(emoticon)
+        // 执行代理方法
+        delegate?.emoticonViewDidSelectedEmoticon(emoticon: emoticon)
     }
 }

@@ -17,9 +17,7 @@ class ComposeViewController: UIViewController {
     /// toolBar与底部间距
     @IBOutlet weak var toolBarY: NSLayoutConstraint!
     
-    lazy var emoticonView: EmoticonInputView = EmoticonInputView.inputView { (emoticon) in
-        self.textView.insertEmoticon(emoticon: emoticon)
-    }
+    lazy var emoticonView: EmoticonInputView = EmoticonInputView.inputView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +72,7 @@ class ComposeViewController: UIViewController {
         
         // 设置键盘视图
         textView.inputView = emoticonView
+        emoticonView.delegate = self
         
         // 刷新键盘视图
         textView.reloadInputViews()
@@ -153,5 +152,21 @@ extension ComposeViewController {
 extension ComposeViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         sendBtn.isEnabled = textView.hasText
+    }
+}
+
+// MARK: emoticonView代理方法
+extension ComposeViewController: EmoticonInputViewDelegate {
+    func emoticonViewDidSelectedDelButton() {
+        print("删除")
+    }
+    
+    func emoticonViewDidSelectedEmoticon(emoticon: WBEmoticon) {
+
+        textView.insertEmoticon(emoticon: emoticon)
+    }
+    
+    func emoticonViewDidSelectedKeyboardButton() {
+        print("键盘")
     }
 }

@@ -10,7 +10,17 @@ import UIKit
 
 private let toolBarColor = "#EAEAEA"
 
+enum toolBarButtonType {
+    case keyboard
+    case recent
+    case nomal
+    case lxh
+    case del
+}
+
 class EmoticonToolBar: UIView {
+    
+    var btnClickCallBack: ((_ clickBtnType: toolBarButtonType) -> ())?
     
     override func awakeFromNib() {
         setupUI()
@@ -22,11 +32,11 @@ extension EmoticonToolBar {
     fileprivate func setupUI() {
         backgroundColor = UIColor.color(hex: toolBarColor)
         
-        let btnSettings = [["imageName": "keyboard", "actionName": "keyboardBtnClick"],
-                           ["imageName": "recent", "actionName": "recentBtnClick"],
-                           ["imageName": "defaultEmoticon", "actionName": "defaultBtnClick"],
-                           ["imageName": "lxhEmoticon", "actionName": "lxhBtnClick"],
-                           ["imageName": "del", "actionName": "delBtnClick"]]
+        let btnSettings = [["imageName": "keyboard", "actionName": "btnClick"],
+                           ["imageName": "recent", "actionName": "btnClick"],
+                           ["imageName": "default_emoticon", "actionName": "btnClick"],
+                           ["imageName": "lxh_emoticon", "actionName": "btnClick"],
+                           ["imageName": "del", "actionName": "btnClick"]]
         
         let width: CGFloat = screenWidth / 5
         for i in 0..<5 {
@@ -35,8 +45,8 @@ extension EmoticonToolBar {
             let btn = UIButton(frame: CGRect(x: x, y: 0, width: width, height: bounds.height))
             let image = UIImage(named: btnSettings[i]["imageName"]!)
             btn.setImage(image, for: [])
-            
-            btn.addTarget(self, action: Selector(btnSettings[i]["actionName"]!), for: .touchUpInside)
+            btn.tag = i
+            btn.addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)
             
             addSubview(btn)
         }
@@ -46,23 +56,26 @@ extension EmoticonToolBar {
 
 // MARK: 监听方法
 extension EmoticonToolBar {
-    @objc fileprivate func keyboardBtnClick() {
-        
-    }
     
-    @objc fileprivate func recentBtnClick() {
+    @objc fileprivate func btnClick(btn: UIButton) {
         
-    }
-    
-    @objc fileprivate func defaultBtnClick() {
+        var type: toolBarButtonType
         
-    }
-    
-    @objc fileprivate func lxhBtnClick() {
+        switch btn.tag {
+        case 0:
+            type = .keyboard
+        case 1:
+            type = .recent
+        case 2:
+            type = .nomal
+        case 3:
+            type = .lxh
+        case 4:
+            type = .del
+        default:
+            type = .nomal
+        }
         
-    }
-    
-    @objc fileprivate func delBtnClick() {
-        
+        btnClickCallBack?(type)
     }
 }
