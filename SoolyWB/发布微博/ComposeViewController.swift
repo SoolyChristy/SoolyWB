@@ -157,8 +157,14 @@ extension ComposeViewController: UITextViewDelegate {
 
 // MARK: emoticonView代理方法
 extension ComposeViewController: EmoticonInputViewDelegate {
-    func emoticonViewDidSelectedDelButton() {
-        print("删除")
+    func emoticonViewDidSelectedDelButton(isLongPress: Bool) {
+        if isLongPress {
+            // 清空
+            textView.attributedText = NSAttributedString(string: "")
+        }else {
+            // 退格
+            textView.deleteBackward()
+        }
     }
     
     func emoticonViewDidSelectedEmoticon(emoticon: WBEmoticon) {
@@ -167,6 +173,9 @@ extension ComposeViewController: EmoticonInputViewDelegate {
     }
     
     func emoticonViewDidSelectedKeyboardButton() {
-        print("键盘")
+        // 恢复键盘
+        textView.inputView = nil
+        
+        textView.reloadInputViews()
     }
 }

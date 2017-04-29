@@ -29,7 +29,7 @@ class WBEmoticonPackage: NSObject {
                 let emoticonArr = NSArray(contentsOfFile: EmoticonPath) as? [NSDictionary] {
                 for dic in emoticonArr {
                     // 转模型
-                    var emoticon = WBEmoticon.deserialize(from: dic) ?? WBEmoticon()
+                    let emoticon = WBEmoticon.deserialize(from: dic) ?? WBEmoticon()
                     emoticon.directory = directory
                     
                     emoticons.append(emoticon)
@@ -69,7 +69,7 @@ class WBEmoticonPackage: NSObject {
 }
 
 /// 表情模型
-struct WBEmoticon: HandyJSON {
+class WBEmoticon: HandyJSON {
     /// 表情类型 0：图片  1：emoji
     var type: String?
     /// 中文标识
@@ -80,6 +80,8 @@ struct WBEmoticon: HandyJSON {
     var png: String?
     /// 表情目录
     var directory: String?
+    /// 次数
+    var times: Int = 0
     
     /// 表情图片
     var image: UIImage? {
@@ -90,6 +92,8 @@ struct WBEmoticon: HandyJSON {
         }
         return nil
     }
+    
+    required init() {}
     
     /// 16进制编码 => emoji
     func getEmoji() -> String? {

@@ -38,3 +38,8 @@ let margin: CGFloat = 12
 let originalTextFont = UIFont.systemFont(ofSize: 15)
 /// 转发微博字体
 let repostTextFont = UIFont.systemFont(ofSize: 14)
+
+/// 微博橙色
+let wbOrange = UIColor.color(hex: "#FC6A08")
+/// 超链接文本颜色
+let linkTextColor = UIColor.color(hex: "#4F7596")

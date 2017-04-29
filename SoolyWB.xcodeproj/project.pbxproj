@@ -19,6 +19,7 @@
 		701AAB671EB0A8F7007B5AA8 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AAB661EB0A8F7007B5AA8 /* MessageViewController.swift */; };
 		701AAB691EB0A93C007B5AA8 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AAB681EB0A93C007B5AA8 /* DiscoverViewController.swift */; };
 		701AAB6B1EB0A949007B5AA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AAB6A1EB0A949007B5AA8 /* ProfileViewController.swift */; };
+		70345BBC1EB4C2130094CEB2 /* WBLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70345BBB1EB4C2130094CEB2 /* WBLabel.swift */; };
 		703695D91EACF5F30029834F /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703695D81EACF5F30029834F /* UIImage+extension.swift */; };
 		703695DE1EACFFFC0029834F /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703695DC1EACFFFC0029834F /* ComposeViewController.swift */; };
 		703695DF1EACFFFC0029834F /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703695DD1EACFFFC0029834F /* ComposeViewController.xib */; };
@@ -92,6 +93,7 @@
 		701AAB661EB0A8F7007B5AA8 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		701AAB681EB0A93C007B5AA8 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		701AAB6A1EB0A949007B5AA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		70345BBB1EB4C2130094CEB2 /* WBLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBLabel.swift; sourceTree = "<group>"; };
 		703695D81EACF5F30029834F /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		703695DC1EACFFFC0029834F /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		703695DD1EACFFFC0029834F /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
@@ -214,6 +216,14 @@
 			);
 			name = "extentions(拓展)";
 			path = extentions;
+			sourceTree = "<group>";
+		};
+		70345BBA1EB4C1E30094CEB2 /* WBLabel */ = {
+			isa = PBXGroup;
+			children = (
+				70345BBB1EB4C2130094CEB2 /* WBLabel.swift */,
+			);
+			name = WBLabel;
 			sourceTree = "<group>";
 		};
 		703695DB1EACFFFC0029834F /* 发布微博 */ = {
@@ -368,6 +378,7 @@
 		70879B971EA61D1A008F9A02 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				70345BBA1EB4C1E30094CEB2 /* WBLabel */,
 				70C0E9D81EB0DF36003725B9 /* Emoticon */,
 				7010F39F1EA8E860002CD908 /* extentions(拓展) */,
 				70879B981EA61D1A008F9A02 /* NetWorkManager.swift */,
@@ -749,6 +760,7 @@
 				701AAB671EB0A8F7007B5AA8 /* MessageViewController.swift in Sources */,
 				703695D91EACF5F30029834F /* UIImage+extension.swift in Sources */,
 				70460E801EB1E04C005A5A02 /* EmoticonToolBar.swift in Sources */,
+				70345BBC1EB4C2130094CEB2 /* WBLabel.swift in Sources */,
 				70879BA01EA640E4008F9A02 /* WBUserAccount.swift in Sources */,
 				70FD4A981EAA512A0008903B /* StatusPicView.swift in Sources */,
 			);

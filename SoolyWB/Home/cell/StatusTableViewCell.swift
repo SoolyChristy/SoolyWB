@@ -21,13 +21,13 @@ class StatusTableViewCell: UITableViewCell {
     /// 认证图标
     @IBOutlet weak var avatarIcon: UIImageView!
     /// 微博正文
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: WBLabel!
     /// 配图视图
     @IBOutlet weak var picView: StatusPicView!
     /// 工具栏
     @IBOutlet weak var toolBar: toolBarView!
-    
-    @IBOutlet weak var repostLabel: UILabel!
+    /// 被转发文本
+    @IBOutlet weak var repostLabel: WBLabel!
     
     
     var viewModel: WBStatusViewModel? {
@@ -50,7 +50,8 @@ class StatusTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+//        statusLabel.font = UIFont.systemFont(ofSize: 15)
+//        repostLabel.font = UIFont.systemFont(ofSize: 14)
     }
     
 }

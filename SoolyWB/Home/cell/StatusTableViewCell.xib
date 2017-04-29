@@ -27,8 +27,8 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0y-8F-cJv" userLabel="昵称">
-                        <rect key="frame" x="58" y="12" width="40" height="18"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <rect key="frame" x="58" y="12" width="39" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -51,7 +51,7 @@
                             <constraint firstAttribute="width" constant="14" id="tYQ-uO-Jga"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nux-i5-hTS" userLabel="正文">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nux-i5-hTS" userLabel="正文" customClass="WBLabel" customModule="SoolyWB" customModuleProvider="target">
                         <rect key="frame" x="12" y="58" width="29" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
@@ -155,7 +155,7 @@
                 <outlet property="timeLabel" destination="8p2-jw-gfu" id="loj-CR-QD8"/>
                 <outlet property="toolBar" destination="qO1-LW-F2b" id="pja-A6-cg3"/>
             </connections>
-            <point key="canvasLocation" x="-800" y="-88.5"/>
+            <point key="canvasLocation" x="-47" y="30"/>
         </tableViewCell>
     </objects>
     <resources>

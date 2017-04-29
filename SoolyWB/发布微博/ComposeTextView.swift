@@ -21,6 +21,11 @@ class ComposeTextView: UITextView {
     }()
     
     override func awakeFromNib() {
+        
+        // 注册通知
+        // 不使用代理 如果这里使用代理 Controller的代理就不生效
+        NotificationCenter.default.addObserver(self, selector: #selector(textChanged), name: Notification.Name.UITextViewTextDidChange, object: nil)
+        
         setupUI()
     }
     
@@ -71,9 +76,7 @@ extension ComposeTextView {
 // MARK: 设置界面
 extension ComposeTextView {
     fileprivate func setupUI() {
-        // 注册通知
-        // 不使用代理 如果这里使用代理 Controller的代理就不生效
-        NotificationCenter.default.addObserver(self, selector: #selector(textChanged), name: Notification.Name.UITextViewTextDidChange, object: nil)
+        tintColor = wbOrange
         
         addSubview(placeholderLabel)
     }

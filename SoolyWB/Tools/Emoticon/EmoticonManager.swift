@@ -9,6 +9,7 @@
 import UIKit
 
 class WBEmoticonManager {
+    /// 单例
     static let shared = WBEmoticonManager()
     /// 表情素材的bundle
     lazy var bundle: Bundle = {
@@ -21,6 +22,31 @@ class WBEmoticonManager {
     
     private init() {
         loadEmoticonPackage()
+    }
+    
+    /// 添加最近表情
+    func addRecentEmoticon(emoticon: WBEmoticon) {
+        emoticon.times += 1
+        
+        // 排序 次数高的在前
+        emoticonPackages[0].emoticons.sort{ $0.times > $1.times }
+        
+        // 若数组有此表情则不添加
+        for em in emoticonPackages[0].emoticons {
+            if let emChs = em.chs, let emoticonChs = emoticon.chs {
+                if emChs == emoticonChs {
+                    return
+                }
+            }else {
+                if em.code == emoticon.code {
+                    return
+                }
+            }
+        }
+        
+        // 添加表情
+        emoticonPackages[0].emoticons.insert(emoticon, at: 0)
+        
     }
 }
 

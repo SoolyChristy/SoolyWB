@@ -222,7 +222,7 @@ extension WBStatusViewModel {
         
         // 微博正文高度
         if status.text != nil {
-            let l = UILabel()
+            let l = WBLabel()
             l.attributedText = textAttributedStr
             l.numberOfLines = 0
             l.font = UIFont.systemFont(ofSize: 15)
@@ -244,7 +244,7 @@ extension WBStatusViewModel {
             height += margin
             
             // 转发文本
-            let l = UILabel()
+            let l = WBLabel()
             l.attributedText = repostTextAttr
             l.numberOfLines = 0
             l.font = UIFont.systemFont(ofSize: 14)

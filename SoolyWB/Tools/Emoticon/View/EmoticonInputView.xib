@@ -32,6 +32,11 @@
                         <constraint firstAttribute="height" constant="44" id="jdn-VG-IzO"/>
                     </constraints>
                 </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Boh-Jb-lPw">
+                    <rect key="frame" x="172.5" y="183" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -42,11 +47,14 @@
                 <constraint firstItem="8jP-1w-ccy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MCn-d4-JNF"/>
                 <constraint firstItem="I8F-q8-5Wz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eRp-ZL-eSZ"/>
                 <constraint firstAttribute="trailing" secondItem="8jP-1w-ccy" secondAttribute="trailing" id="i6i-8u-1ZT"/>
+                <constraint firstItem="Boh-Jb-lPw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tS3-Ob-dD5"/>
+                <constraint firstItem="8jP-1w-ccy" firstAttribute="top" secondItem="Boh-Jb-lPw" secondAttribute="bottom" constant="-5" id="wqB-vt-lRK"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionView" destination="I8F-q8-5Wz" id="1mD-f1-hgd"/>
+                <outlet property="pageControl" destination="Boh-Jb-lPw" id="MYd-L0-bAK"/>
                 <outlet property="toolBar" destination="8jP-1w-ccy" id="zIR-AS-eyy"/>
             </connections>
             <point key="canvasLocation" x="20" y="59.5"/>

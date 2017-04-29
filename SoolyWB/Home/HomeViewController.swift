@@ -18,7 +18,11 @@ class HomeViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        let l = WBLabel()
+//        l.text = "www.baidu.com @aaaa啊a: #你是#"
+//        l.sizeToFit()
+//        l.center = view.center
+//        view.addSubview(l)
     }
 }
 
