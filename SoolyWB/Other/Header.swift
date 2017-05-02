@@ -23,6 +23,9 @@ let screenHeight = UIScreen.main.bounds.height
 /// Documents目录
 let docPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
 
+let statusCellID = "statusCell"
+let repostCellID = "repostCell"
+
 // cell间隔背景颜色
 let footerViewBgColor = UIColor.color(hex: "#efeff4")
 /// section间距
@@ -43,3 +46,8 @@ let repostTextFont = UIFont.systemFont(ofSize: 14)
 let wbOrange = UIColor.color(hex: "#FC6A08")
 /// 超链接文本颜色
 let linkTextColor = UIColor.color(hex: "#4F7596")
+
+/// 个人资料页头部视图高度
+let profileHeaderViewHeight: CGFloat = 320
+/// 背景图片默认高度
+let bgImageHeight: CGFloat = 120

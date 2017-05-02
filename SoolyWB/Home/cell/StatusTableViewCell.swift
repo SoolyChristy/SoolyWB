@@ -10,6 +10,8 @@ import UIKit
 
 class StatusTableViewCell: UITableViewCell {
     
+    weak var vc: BasicViewController?
+    
     /// 头像
     @IBOutlet weak var iconView: UIImageView!
     /// 昵称
@@ -41,8 +43,11 @@ class StatusTableViewCell: UITableViewCell {
             toolBar.viewModel = viewModel
             picView.viewModel = viewModel
             
+            statusLabel.delegate = self
+            
             // 设置转发微博
             if let repostAttr = viewModel?.repostTextAttr {
+                repostLabel.delegate = self
                 repostLabel.attributedText = repostAttr
             }
         }
@@ -50,8 +55,22 @@ class StatusTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        statusLabel.font = UIFont.systemFont(ofSize: 15)
-//        repostLabel.font = UIFont.systemFont(ofSize: 14)
     }
     
+}
+
+extension StatusTableViewCell: WBLabelDelegate {
+    func labelDidSelectedLink() {
+        let vv = textViewController()
+        
+        vc?.navigationController?.pushViewController(vv, animated: true)
+    }
+    
+    func labelDidSelectedAt() {
+        vc?.navigationController?.pushViewController(BasicViewController(), animated: true)
+    }
+    
+    func labelDidSelectedTopic() {
+        vc?.navigationController?.pushViewController(BasicViewController(), animated: true)
+    }
 }

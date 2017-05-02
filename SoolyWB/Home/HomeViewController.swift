@@ -8,9 +8,6 @@
 
 import UIKit
 
-private let statusCellID = "statusCell"
-private let repostCellID = "repostCell"
-
 class HomeViewController: BasicViewController {
 
     lazy var statusVMs = [WBStatusViewModel]()
@@ -18,11 +15,6 @@ class HomeViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let l = WBLabel()
-//        l.text = "www.baidu.com @aaaa啊a: #你是#"
-//        l.sizeToFit()
-//        l.center = view.center
-//        view.addSubview(l)
     }
 }
 
@@ -32,7 +24,7 @@ extension HomeViewController {
         super.loadData()
         
         // 如果是上拉刷新
-        if isPullUp {
+        if pullUpView.isPullUp {
             // 设置maxID
             let maxID = statusVMs.last?.status.id ?? 0
             NetWorkManager.shared.loadStatuses(sinceID: 0, maxID: maxID, compeletion: { (statuses, isSuccess) in
@@ -42,11 +34,10 @@ extension HomeViewController {
                     return
                 }
                 self.statusVMs += statuses
-                self.tabelView.reloadData()
-                self.pullUpView.indicator.stopAnimating()
+                self.tableView.reloadData()
             })
-            isPullUp = false
-            pullUpView.indicator.isHidden = true
+            
+            pullUpView.endRefreshing()
             return
         }
         
@@ -80,7 +71,7 @@ extension HomeViewController {
             
             self.refreshControl.endRefreshing()
             
-            self.tabelView.reloadData()
+            self.tableView.reloadData()
         }
     }
 }
@@ -94,17 +85,17 @@ extension HomeViewController {
         setupComposeButton()
     }
     
-    override func setupTabelView() {
-        super.setupTabelView()
+    override func setupTableView() {
+        super.setupTableView()
 
-        tabelView.register(UINib(nibName: "StatusTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: statusCellID)
-        tabelView.register(UINib(nibName: "RepostStatusCell", bundle: Bundle.main), forCellReuseIdentifier: repostCellID)
+        tableView.register(UINib(nibName: "StatusTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: statusCellID)
+        tableView.register(UINib(nibName: "RepostStatusCell", bundle: Bundle.main), forCellReuseIdentifier: repostCellID)
         
         // 预估行高
-        tabelView.estimatedRowHeight = 300
+        tableView.estimatedRowHeight = 300
         
         // 自动行高
-//        tabelView.rowHeight = UITableViewAutomaticDimension
+//        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     /// 发布新微博按钮
@@ -160,9 +151,10 @@ extension HomeViewController {
         // 判断 是否有转发微博
         let id = viewModel.status.retweeted_status == nil ? statusCellID : repostCellID
         
-        let cell = tabelView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! StatusTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! StatusTableViewCell
         
         cell.viewModel = viewModel
+        cell.vc = self
         
         return cell
     }

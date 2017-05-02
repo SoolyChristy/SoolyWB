@@ -12,8 +12,29 @@ class WBNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.isHidden = true
+        
     }
 
+    override func popViewController(animated: Bool) -> UIViewController? {
+        super.popViewController(animated: animated)
+        
+        if viewControllers.count <= 1 {
+            navigationBar.isHidden = true
+        }
+        
+        return nil
+    }
+    
+//    override func et_popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+//        guard let vcs = super.et_popToViewController(viewController, animated: animated) else {
+//            return nil
+//        }
+//        
+//        if viewControllers.count <= 1 {
+//            navigationBar.isHidden = true
+//        }
+//        
+//        return vcs
+//    }
 
 }

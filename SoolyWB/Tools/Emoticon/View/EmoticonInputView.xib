@@ -37,6 +37,12 @@
                     <color key="pageIndicatorTintColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </pageControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无最近使用表情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7e-2O-ohU">
+                    <rect key="frame" x="142.5" y="193" width="100" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -47,7 +53,9 @@
                 <constraint firstItem="8jP-1w-ccy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MCn-d4-JNF"/>
                 <constraint firstItem="I8F-q8-5Wz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eRp-ZL-eSZ"/>
                 <constraint firstAttribute="trailing" secondItem="8jP-1w-ccy" secondAttribute="trailing" id="i6i-8u-1ZT"/>
+                <constraint firstItem="c7e-2O-ohU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qkS-Ah-RRL"/>
                 <constraint firstItem="Boh-Jb-lPw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tS3-Ob-dD5"/>
+                <constraint firstItem="8jP-1w-ccy" firstAttribute="top" secondItem="c7e-2O-ohU" secondAttribute="bottom" constant="5" id="wEx-xl-LgN"/>
                 <constraint firstItem="8jP-1w-ccy" firstAttribute="top" secondItem="Boh-Jb-lPw" secondAttribute="bottom" constant="-5" id="wqB-vt-lRK"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -55,6 +63,7 @@
             <connections>
                 <outlet property="collectionView" destination="I8F-q8-5Wz" id="1mD-f1-hgd"/>
                 <outlet property="pageControl" destination="Boh-Jb-lPw" id="MYd-L0-bAK"/>
+                <outlet property="tipLabel" destination="c7e-2O-ohU" id="f8h-Qr-I06"/>
                 <outlet property="toolBar" destination="8jP-1w-ccy" id="zIR-AS-eyy"/>
             </connections>
             <point key="canvasLocation" x="20" y="59.5"/>

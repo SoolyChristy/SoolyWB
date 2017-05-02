@@ -31,6 +31,11 @@
 		70460E7E1EB1B190005A5A02 /* EmoticonCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70460E7D1EB1B190005A5A02 /* EmoticonCollectionViewLayout.swift */; };
 		70460E801EB1E04C005A5A02 /* EmoticonToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70460E7F1EB1E04C005A5A02 /* EmoticonToolBar.swift */; };
 		70460E821EB22D65005A5A02 /* WBEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70460E811EB22D65005A5A02 /* WBEmoticonAttachment.swift */; };
+		70686BB01EB8A1AC00ACA643 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70686BAE1EB8A1AC00ACA643 /* ProfileHeaderView.swift */; };
+		70686BB11EB8A1AC00ACA643 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70686BAF1EB8A1AC00ACA643 /* ProfileHeaderView.xib */; };
+		70686BB31EB8CFF800ACA643 /* WBUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70686BB21EB8CFF800ACA643 /* WBUserViewModel.swift */; };
+		707BC7931EB59556009FFA9D /* textViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BC7921EB59556009FFA9D /* textViewController.swift */; };
+		707BC7951EB5CB4E009FFA9D /* ETNavBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BC7941EB5CB4E009FFA9D /* ETNavBarTransparent.swift */; };
 		70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B351EA5B50C008F9A02 /* AppDelegate.swift */; };
 		70879B3B1EA5B50C008F9A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70879B391EA5B50C008F9A02 /* Main.storyboard */; };
 		70879B3D1EA5B50C008F9A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70879B3C1EA5B50C008F9A02 /* Assets.xcassets */; };
@@ -105,6 +110,11 @@
 		70460E7D1EB1B190005A5A02 /* EmoticonCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonCollectionViewLayout.swift; sourceTree = "<group>"; };
 		70460E7F1EB1E04C005A5A02 /* EmoticonToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonToolBar.swift; sourceTree = "<group>"; };
 		70460E811EB22D65005A5A02 /* WBEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonAttachment.swift; sourceTree = "<group>"; };
+		70686BAE1EB8A1AC00ACA643 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		70686BAF1EB8A1AC00ACA643 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		70686BB21EB8CFF800ACA643 /* WBUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserViewModel.swift; sourceTree = "<group>"; };
+		707BC7921EB59556009FFA9D /* textViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textViewController.swift; sourceTree = "<group>"; };
+		707BC7941EB5CB4E009FFA9D /* ETNavBarTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETNavBarTransparent.swift; sourceTree = "<group>"; };
 		70879B321EA5B50C008F9A02 /* SoolyWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70879B351EA5B50C008F9A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70879B3A1EA5B50C008F9A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				7010F39D1EA8A317002CD908 /* WBStatusViewModel.swift */,
+				70686BB21EB8CFF800ACA643 /* WBUserViewModel.swift */,
 			);
 			name = "ViewModel(视图模型)";
 			path = ViewModel;
@@ -209,6 +220,7 @@
 		7010F39F1EA8E860002CD908 /* extentions(拓展) */ = {
 			isa = PBXGroup;
 			children = (
+				707BC7941EB5CB4E009FFA9D /* ETNavBarTransparent.swift */,
 				7010F3A01EA8E87C002CD908 /* UIImageView+WebImage.swift */,
 				7010F3A41EA8EE4B002CD908 /* UIColor+HexString.swift */,
 				70FD4A951EAA13370008903B /* String+extension.swift */,
@@ -244,6 +256,15 @@
 				70460E7B1EB1A7EE005A5A02 /* EmoticonCell.swift */,
 				70460E7F1EB1E04C005A5A02 /* EmoticonToolBar.swift */,
 				70460E7D1EB1B190005A5A02 /* EmoticonCollectionViewLayout.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		70686BAD1EB8A1AC00ACA643 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				70686BAE1EB8A1AC00ACA643 /* ProfileHeaderView.swift */,
+				70686BAF1EB8A1AC00ACA643 /* ProfileHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +356,7 @@
 			children = (
 				7010F3971EA89542002CD908 /* cell */,
 				70879B911EA61CD5008F9A02 /* HomeViewController.swift */,
+				707BC7921EB59556009FFA9D /* textViewController.swift */,
 			);
 			name = "Home(主页)";
 			path = Home;
@@ -361,6 +383,7 @@
 		70879B951EA61D0B008F9A02 /* Profile(我) */ = {
 			isa = PBXGroup;
 			children = (
+				70686BAD1EB8A1AC00ACA643 /* View */,
 				701AAB6A1EB0A949007B5AA8 /* ProfileViewController.swift */,
 			);
 			name = "Profile(我)";
@@ -568,6 +591,7 @@
 				703695DF1EACFFFC0029834F /* ComposeViewController.xib in Resources */,
 				70379AA11EAB121800CA42DA /* RepostStatusCell.xib in Resources */,
 				70879B3B1EA5B50C008F9A02 /* Main.storyboard in Resources */,
+				70686BB11EB8A1AC00ACA643 /* ProfileHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +766,7 @@
 				701AAB6B1EB0A949007B5AA8 /* ProfileViewController.swift in Sources */,
 				70C0E9DA1EB0DF48003725B9 /* EmoticonManager.swift in Sources */,
 				703695DE1EACFFFC0029834F /* ComposeViewController.swift in Sources */,
+				707BC7951EB5CB4E009FFA9D /* ETNavBarTransparent.swift in Sources */,
 				70460E781EB1A2B5005A5A02 /* EmoticonInputView.swift in Sources */,
 				70FD4A961EAA13370008903B /* String+extension.swift in Sources */,
 				70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */,
@@ -754,11 +779,14 @@
 				70460E821EB22D65005A5A02 /* WBEmoticonAttachment.swift in Sources */,
 				7010F3941EA88A0C002CD908 /* PullUpView.swift in Sources */,
 				7010F39A1EA89577002CD908 /* StatusTableViewCell.swift in Sources */,
+				70686BB31EB8CFF800ACA643 /* WBUserViewModel.swift in Sources */,
 				701AAB691EB0A93C007B5AA8 /* DiscoverViewController.swift in Sources */,
+				707BC7931EB59556009FFA9D /* textViewController.swift in Sources */,
 				70879B811EA5E0AD008F9A02 /* WBTabBarItemContentView.swift in Sources */,
 				70879B921EA61CD5008F9A02 /* HomeViewController.swift in Sources */,
 				701AAB671EB0A8F7007B5AA8 /* MessageViewController.swift in Sources */,
 				703695D91EACF5F30029834F /* UIImage+extension.swift in Sources */,
+				70686BB01EB8A1AC00ACA643 /* ProfileHeaderView.swift in Sources */,
 				70460E801EB1E04C005A5A02 /* EmoticonToolBar.swift in Sources */,
 				70345BBC1EB4C2130094CEB2 /* WBLabel.swift in Sources */,
 				70879BA01EA640E4008F9A02 /* WBUserAccount.swift in Sources */,

@@ -52,7 +52,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nux-i5-hTS" userLabel="正文" customClass="WBLabel" customModule="SoolyWB" customModuleProvider="target">
-                        <rect key="frame" x="12" y="58" width="37.5" height="18"/>
+                        <rect key="frame" x="12" y="58" width="447" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="qO1-LW-F2b" firstAttribute="top" secondItem="Rld-0t-rGD" secondAttribute="bottom" id="3Fi-nn-Qti"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Nux-i5-hTS" secondAttribute="trailing" constant="12" id="5ib-7x-yD9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Nux-i5-hTS" secondAttribute="trailing" constant="12" id="5ib-7x-yD9"/>
                     <constraint firstItem="qO1-LW-F2b" firstAttribute="top" secondItem="WGV-Zx-evD" secondAttribute="bottom" id="6Wp-vM-qrB"/>
                     <constraint firstAttribute="bottom" secondItem="qO1-LW-F2b" secondAttribute="bottom" id="8I5-6q-mnE"/>
                     <constraint firstItem="jkt-cx-Mfn" firstAttribute="leading" secondItem="Nux-i5-hTS" secondAttribute="leading" id="BEQ-Ql-nXh"/>

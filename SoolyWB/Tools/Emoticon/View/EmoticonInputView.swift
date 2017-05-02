@@ -27,6 +27,7 @@ class EmoticonInputView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var toolBar: EmoticonToolBar!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var tipLabel: UILabel!
     
     /// 快速创建EmoticonInputView
     class func inputView() -> EmoticonInputView {
@@ -116,6 +117,15 @@ extension EmoticonInputView: UICollectionViewDataSource, UICollectionViewDelegat
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            tipLabel.isHidden = false
+            WBEmoticonManager.shared.emoticonPackages[0].emoticons.count == 0 ? (tipLabel.text = "无最近使用的表情") : (tipLabel.text = "最近使用的表情")
+        }else {
+            tipLabel.isHidden = true
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // scrollView在屏幕的中心点
         var center = scrollView.center
@@ -143,14 +153,19 @@ extension EmoticonInputView: UICollectionViewDataSource, UICollectionViewDelegat
         let section = target.section
         toolBar.selectedSection = section
         
-        // 设置 分页控制器
+        // 设置 分页控制器 / 提示标签
         switch section {
         case 0:
             pageControl.isHidden = true
+            
+            tipLabel.isHidden = false
+            WBEmoticonManager.shared.emoticonPackages[0].emoticons.count == 0 ? (tipLabel.text = "无最近使用的表情") : (tipLabel.text = "最近使用的表情")
         case 1, 2, 3:
             pageControl.numberOfPages = collectionView.numberOfItems(inSection: section)
             pageControl.currentPage = target.item
             pageControl.isHidden = false
+            
+            tipLabel.isHidden = true
         default:
             break
         }

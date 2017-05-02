@@ -103,6 +103,37 @@ extension NetWorkManager {
         }
     }
     
+    /// 请求用户微博
+    ///
+    /// - Parameter compeletion:
+    func loadUserStatus(compeletion: @escaping (_ statuses: [WBStatusViewModel]?, _ isSuccess: Bool) -> ()) {
+        let urlStr = "https://api.weibo.com/2/statuses/user_timeline.json"
+        let parameters = ["access_token": userAccount.access_token ?? ""]
+        
+        request(urlString: urlStr, method: .GET, parameters: parameters) { (json, isSuccess) in
+            if isSuccess {
+                guard let statusArr = json?["statuses"] as? [NSDictionary] else {
+                    compeletion(nil, false)
+                    return
+                }
+                
+                var statusViewModels = [WBStatusViewModel]()
+                
+                for dic in statusArr {
+                    if let status = WBStatus.deserialize(from: dic) {
+                        let vm = WBStatusViewModel(model: status)
+                        statusViewModels.append(vm)
+                    }
+                }
+                
+                compeletion(statusViewModels, true)
+            } else {
+                print("微博请求失败！")
+                compeletion(nil, false)
+            }
+        }
+    }
+    
     /// 发布一条纯文本微博
     ///
     /// - Parameters:

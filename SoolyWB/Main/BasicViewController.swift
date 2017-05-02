@@ -10,13 +10,11 @@ import UIKit
 
 class BasicViewController: UIViewController {
 
-    lazy var tabelView: UITableView = UITableView()
+    lazy var tableView: UITableView = UITableView()
     /// 下拉刷新控件
     lazy var refreshControl = UIRefreshControl()
     /// 上拉视图
     lazy var pullUpView = PullUpView.pullUpView()
-    /// 是否是上拉刷新
-    var isPullUp: Bool = false
     
     /// 自定义导航条
     var navigationBar = UINavigationBar()
@@ -66,10 +64,13 @@ extension BasicViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         setupNavigationBar()
-        setupTabelView()
+        setupTableView()
+        
     }
     
     func setupNavigationBar() {
+        
+        navigationController?.navigationBar.isHidden = true
         
         navigationBar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 76)
         
@@ -89,25 +90,25 @@ extension BasicViewController {
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
     }
     
-     func setupTabelView() {
-        tabelView.frame = CGRect(x: 0, y: 88, width: screenWidth, height: screenHeight)
-        tabelView.backgroundColor = UIColor.white
-        tabelView.delegate = self
-        tabelView.dataSource = self
-        tabelView.separatorStyle = .none
+     func setupTableView() {
+        tableView.frame = CGRect(x: 0, y: 88, width: screenWidth, height: screenHeight)
+        tableView.backgroundColor = UIColor.white
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
         
         // 下拉刷新控件
-        tabelView.refreshControl = refreshControl
+        tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
         // 上拉刷新
-        tabelView.tableFooterView = pullUpView
+        tableView.tableFooterView = pullUpView
         
         // 设置内容缩进
 //        tabelView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
         
-//        view.addSubview(tabelView)
-        view.insertSubview(tabelView, belowSubview: navigationBar)
+        view.addSubview(tableView)
+//        view.insertSubview(tableView, belowSubview: navigationBar)
     }
     
     /// 设置title按钮
@@ -148,9 +149,7 @@ extension BasicViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         // 开始刷新
-        pullUpView.indicator.startAnimating()
-        isPullUp = true
-        pullUpView.indicator.isHidden = false
+        pullUpView.startRefreshing()
         loadData()
     }
 
