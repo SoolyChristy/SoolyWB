@@ -69,6 +69,9 @@ class WBUserAccount: HandyJSON {
 
 /// 用户数据模型
 struct WBUserInfo: HandyJSON {
+    /// id
+    var idstr: String?
+    
     /// 用户昵称
     var screen_name: String?
     

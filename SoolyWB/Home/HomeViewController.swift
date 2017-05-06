@@ -16,6 +16,17 @@ class HomeViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let keyAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        keyAnimation.values = [0.4, 0.6, 0.8, 1.0, 1.2, 1.0]
+        keyAnimation.duration = 0.25
+        composeBtn.layer.add(keyAnimation, forKey: nil)
+    }
 }
 
 // MARK: 加载数据
@@ -117,13 +128,6 @@ extension HomeViewController {
         composeBtn.addTarget(self, action: #selector(composeBtnClick), for: .touchUpInside)
         
         view.addSubview(composeBtn)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let keyAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        keyAnimation.values = [0.4, 0.6, 0.8, 1.0, 1.2, 1.0]
-        keyAnimation.duration = 0.25
-        composeBtn.layer.add(keyAnimation, forKey: nil)
     }
 }
 

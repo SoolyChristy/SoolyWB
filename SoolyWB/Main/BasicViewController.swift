@@ -41,6 +41,16 @@ class BasicViewController: UIViewController {
         
     }
 
+    @objc func rightBtnClick(btn: UIButton) {
+        let popVc = PopMenuViewController()
+        popVc.modalPresentationStyle = .popover
+        popVc.preferredContentSize = CGSize(width: 160, height: 200)
+        popVc.popoverPresentationController?.sourceView = btn
+        popVc.popoverPresentationController?.sourceRect = btn.bounds
+
+        present(popVc, animated: true)
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -63,6 +73,8 @@ extension BasicViewController {
         // 取消自动缩进 - 如果隐藏了导航栏，会缩进 20 个点
         automaticallyAdjustsScrollViewInsets = false
         
+        
+        
         setupNavigationBar()
         setupTableView()
         
@@ -77,6 +89,13 @@ extension BasicViewController {
         setTitleBtn(tilte: "")
         
         navItem.leftBarButtonItem = UIBarButtonItem(customView: titleBtn)
+        
+        // 右边按钮
+        let btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "menu"), for: [])
+        btn.sizeToFit()
+        btn.addTarget(self, action: #selector(rightBtnClick(btn:)), for: .touchUpInside)
+        navItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
         
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]

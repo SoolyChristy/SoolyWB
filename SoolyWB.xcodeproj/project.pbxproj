@@ -34,6 +34,7 @@
 		70686BB01EB8A1AC00ACA643 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70686BAE1EB8A1AC00ACA643 /* ProfileHeaderView.swift */; };
 		70686BB11EB8A1AC00ACA643 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70686BAF1EB8A1AC00ACA643 /* ProfileHeaderView.xib */; };
 		70686BB31EB8CFF800ACA643 /* WBUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70686BB21EB8CFF800ACA643 /* WBUserViewModel.swift */; };
+		7072A9F41EBDF9B000195E59 /* PopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7072A9F31EBDF9B000195E59 /* PopMenuViewController.swift */; };
 		707BC7931EB59556009FFA9D /* textViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BC7921EB59556009FFA9D /* textViewController.swift */; };
 		707BC7951EB5CB4E009FFA9D /* ETNavBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BC7941EB5CB4E009FFA9D /* ETNavBarTransparent.swift */; };
 		70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B351EA5B50C008F9A02 /* AppDelegate.swift */; };
@@ -113,6 +114,7 @@
 		70686BAE1EB8A1AC00ACA643 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		70686BAF1EB8A1AC00ACA643 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 		70686BB21EB8CFF800ACA643 /* WBUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserViewModel.swift; sourceTree = "<group>"; };
+		7072A9F31EBDF9B000195E59 /* PopMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuViewController.swift; sourceTree = "<group>"; };
 		707BC7921EB59556009FFA9D /* textViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textViewController.swift; sourceTree = "<group>"; };
 		707BC7941EB5CB4E009FFA9D /* ETNavBarTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETNavBarTransparent.swift; sourceTree = "<group>"; };
 		70879B321EA5B50C008F9A02 /* SoolyWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +271,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7072A9F01EBDB11F00195E59 /* PopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				7072A9F31EBDF9B000195E59 /* PopMenuViewController.swift */,
+			);
+			name = PopMenu;
+			sourceTree = "<group>";
+		};
 		70879B291EA5B50C008F9A02 = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +344,7 @@
 		70879B791EA5E0AD008F9A02 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7072A9F01EBDB11F00195E59 /* PopMenu */,
 				70879B821EA61450008F9A02 /* TabBar */,
 				70879B7A1EA5E0AD008F9A02 /* BasicViewController.swift */,
 				70879B7C1EA5E0AD008F9A02 /* WBNavigationController.swift */,
@@ -779,6 +790,7 @@
 				70460E821EB22D65005A5A02 /* WBEmoticonAttachment.swift in Sources */,
 				7010F3941EA88A0C002CD908 /* PullUpView.swift in Sources */,
 				7010F39A1EA89577002CD908 /* StatusTableViewCell.swift in Sources */,
+				7072A9F41EBDF9B000195E59 /* PopMenuViewController.swift in Sources */,
 				70686BB31EB8CFF800ACA643 /* WBUserViewModel.swift in Sources */,
 				701AAB691EB0A93C007B5AA8 /* DiscoverViewController.swift in Sources */,
 				707BC7931EB59556009FFA9D /* textViewController.swift in Sources */,

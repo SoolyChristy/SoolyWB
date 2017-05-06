@@ -20,8 +20,21 @@ class ProfileViewController: BasicViewController {
     }
     
     override func loadData() {
-        // 请求用户微博
-        NetWorkManager.shared.loadUserStatus { (viewModel, isSuccess) in
+        // 如果是上拉刷新
+        if pullUpView.isPullUp {
+            NetWorkManager.shared.loadUserStatuses(sinceID: 0, maxID: statusVMs.last?.status.id ?? 0) { (viewModel, isSuccess) in
+                guard let viewModel = viewModel else{
+                    return
+                }
+                
+                self.statusVMs += viewModel
+                self.tableView.reloadData()
+                
+            }
+            return
+        }
+        
+        NetWorkManager.shared.loadUserStatuses(sinceID: statusVMs.first?.status.id ?? 0, maxID: 0) { (viewModel, isSuccess) in
             guard let viewModel = viewModel else{
                 return
             }
@@ -43,6 +56,10 @@ extension ProfileViewController {
     }
     
     override func setupTableView() {
+        
+        // 更改默认样式 使用.grouped headerView不会悬停 但是在cell底部会有一段间距 将footerView的height设置为0.01即可解决
+        tableView = UITableView(frame: CGRect(), style: .grouped)
+        
         super.setupTableView()
         
         tableView.frame = view.bounds
@@ -57,7 +74,7 @@ extension ProfileViewController {
         // 偏移距离
         tableView.contentOffset = CGPoint(x: 0, y: -profileHeaderViewHeight)
         
-        tableView.refreshControl = nil
+//        tableView.refreshControl = nil
         
         tableView.register(UINib(nibName: "StatusTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: statusCellID)
         tableView.register(UINib(nibName: "RepostStatusCell", bundle: Bundle.main), forCellReuseIdentifier: repostCellID)
@@ -95,6 +112,18 @@ extension ProfileViewController {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return cellMargin
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: cellMargin))
+        
+        view.backgroundColor = footerViewBgColor
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
     }
 }
 

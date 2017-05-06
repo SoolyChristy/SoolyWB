@@ -16,3 +16,14 @@ class MessageViewController: BasicViewController {
     }
 
 }
+
+extension MessageViewController {
+    override func setupUI() {
+        super.setupUI()
+    }
+    
+    override func setupTableView() {
+        super.setupTableView()
+        
+    }
+}

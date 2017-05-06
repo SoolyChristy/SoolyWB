@@ -15,26 +15,20 @@ class WBNavigationController: UINavigationController {
         
     }
 
-    override func popViewController(animated: Bool) -> UIViewController? {
-        super.popViewController(animated: animated)
-        
-        if viewControllers.count <= 1 {
-            navigationBar.isHidden = true
-        }
-        
-        return nil
-    }
-    
-//    override func et_popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
-//        guard let vcs = super.et_popToViewController(viewController, animated: animated) else {
-//            return nil
+    // 若pop回微博主页则隐藏导航条
+//    override func popViewController(animated: Bool) -> UIViewController? {
+//        if viewControllers.count <= 2 {
+//            for vc in viewControllers {
+//                if vc is HomeViewController {
+//                    navigationBar.isHidden = true
+//                    return super.popViewController(animated: animated)
+//                }
+//            }
+//        }else {
+//            navigationBar.isHidden = false
 //        }
 //        
-//        if viewControllers.count <= 1 {
-//            navigationBar.isHidden = true
-//        }
-//        
-//        return vcs
+//        return super.popViewController(animated: animated)
 //    }
-
+    
 }

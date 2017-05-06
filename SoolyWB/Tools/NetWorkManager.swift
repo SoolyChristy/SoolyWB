@@ -23,6 +23,12 @@ class NetWorkManager {
     var isUserLogin: Bool {
         return userAccount.access_token != nil
     }
+    
+    var alamoManager: SessionManager?
+    
+    private init() {
+        setupAlamofire()
+    }
 }
 
 // MARK: 微博相关方法
@@ -64,6 +70,7 @@ extension NetWorkManager {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         guard let accessToken = userAccount.access_token else {
             print("请求微博数据失败！ - toke为空")
+            compeletion(nil, false)
             return
         }
         
@@ -78,6 +85,8 @@ extension NetWorkManager {
                 // 将JSON字典数组 => 模型数组
                 var statusVMs = [WBStatusViewModel]()
                 guard let statusesArr = json?["statuses"] as? [NSDictionary] else {
+                    compeletion(nil, false)
+                    print("请求成功，但微博数据为空！")
                     return
                 }
                 for statusDic in statusesArr {
@@ -103,17 +112,31 @@ extension NetWorkManager {
         }
     }
     
-    /// 请求用户微博
+    
+    /// 根据ID请求用户微博 若无id则请求当前用户微博
     ///
-    /// - Parameter compeletion:
-    func loadUserStatus(compeletion: @escaping (_ statuses: [WBStatusViewModel]?, _ isSuccess: Bool) -> ()) {
+    /// - Parameters:
+    ///   - uid: 请求用户ID
+    ///   - compeletion: 完成回调
+    func loadUserStatuses(uid: String? = nil, sinceID: Int64, maxID: Int64,compeletion: @escaping (_ statuses: [WBStatusViewModel]?, _ isSuccess: Bool) -> ()) {
         let urlStr = "https://api.weibo.com/2/statuses/user_timeline.json"
-        let parameters = ["access_token": userAccount.access_token ?? ""]
+        var parameters: [String: Any] = ["access_token": userAccount.access_token ?? "",
+                                         "since_id": sinceID,
+                                         "max_id": maxID]
+        
+        if let uid = uid {
+            parameters = ["access_token": userAccount.access_token ?? "",
+                          "uid": uid,
+                          "since_id": sinceID,
+                          "max_id": maxID]
+        }
+        
         
         request(urlString: urlStr, method: .GET, parameters: parameters) { (json, isSuccess) in
             if isSuccess {
                 guard let statusArr = json?["statuses"] as? [NSDictionary] else {
                     compeletion(nil, false)
+                    print("请求成功，但微博数据为空！")
                     return
                 }
                 
@@ -192,6 +215,14 @@ extension NetWorkManager {
 // MARK: 封装Alamofire
 extension NetWorkManager {
     
+    fileprivate func setupAlamofire() {
+        let config = URLSessionConfiguration.default
+        // 设置超时时间 s
+        config.timeoutIntervalForRequest = 15
+        
+        alamoManager = SessionManager(configuration: config)
+    }
+    
     /// 隔离Alamofire GET/POST 方法
     ///
     /// - Parameters:
@@ -207,8 +238,8 @@ extension NetWorkManager {
         } else {
             m = .post
         }
-        
-        Alamofire.request(urlString, method: m, parameters: parameters).responseJSON(completionHandler: { (response) in
+
+        alamoManager?.request(urlString, method: m, parameters: parameters).responseJSON(completionHandler: { (response) in
             switch response.result {
             case .success(let json):
                 
