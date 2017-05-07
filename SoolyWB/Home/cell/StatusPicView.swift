@@ -44,7 +44,6 @@ extension StatusPicView {
             let y = CGFloat(row) * (picWH + picMargin)
             
             let imageView = UIImageView(frame: CGRect(x: x, y: y, width: picWH, height: picWH))
-            imageView.backgroundColor = UIColor.yellow
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
 //            imageView.isHidden = true

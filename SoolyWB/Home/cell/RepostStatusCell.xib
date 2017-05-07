@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="479" height="325"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="479" height="325"/>
+                <rect key="frame" x="0.0" y="0.0" width="479" height="324.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ea-mP-VgK" userLabel="头像">
@@ -45,7 +45,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="jra-mt-gGV" userLabel="认证">
-                        <rect key="frame" x="37" y="37" width="14" height="14"/>
+                        <rect key="frame" x="34" y="34" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="Lwg-s7-Lbu"/>
                             <constraint firstAttribute="width" constant="14" id="tYQ-uO-Jga"/>
@@ -128,7 +128,7 @@
                     <constraint firstItem="qO1-LW-F2b" firstAttribute="top" secondItem="WGV-Zx-evD" secondAttribute="bottom" id="6Wp-vM-qrB"/>
                     <constraint firstAttribute="bottom" secondItem="qO1-LW-F2b" secondAttribute="bottom" id="8I5-6q-mnE"/>
                     <constraint firstItem="jkt-cx-Mfn" firstAttribute="leading" secondItem="Nux-i5-hTS" secondAttribute="leading" id="BEQ-Ql-nXh"/>
-                    <constraint firstItem="jra-mt-gGV" firstAttribute="trailing" secondItem="6ea-mP-VgK" secondAttribute="trailing" constant="5" id="DFB-ej-2at"/>
+                    <constraint firstItem="jra-mt-gGV" firstAttribute="trailing" secondItem="6ea-mP-VgK" secondAttribute="trailing" constant="2" id="DFB-ej-2at"/>
                     <constraint firstItem="WGV-Zx-evD" firstAttribute="top" secondItem="Nux-i5-hTS" secondAttribute="bottom" constant="12" id="DY0-sF-W2C"/>
                     <constraint firstAttribute="trailing" secondItem="WGV-Zx-evD" secondAttribute="trailing" id="F9y-c2-lwW"/>
                     <constraint firstItem="XyR-T2-rfO" firstAttribute="leading" secondItem="8p2-jw-gfu" secondAttribute="trailing" constant="8" id="FFB-9k-fwZ"/>
@@ -136,7 +136,7 @@
                     <constraint firstItem="qO1-LW-F2b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="J2X-K5-n4Y"/>
                     <constraint firstItem="WGV-Zx-evD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JT4-IO-s77"/>
                     <constraint firstAttribute="trailing" secondItem="qO1-LW-F2b" secondAttribute="trailing" id="Ps4-Bd-hDz"/>
-                    <constraint firstItem="jra-mt-gGV" firstAttribute="bottom" secondItem="6ea-mP-VgK" secondAttribute="bottom" constant="5" id="RHk-FU-2vM"/>
+                    <constraint firstItem="jra-mt-gGV" firstAttribute="bottom" secondItem="6ea-mP-VgK" secondAttribute="bottom" constant="2" id="RHk-FU-2vM"/>
                     <constraint firstItem="XyR-T2-rfO" firstAttribute="centerY" secondItem="8p2-jw-gfu" secondAttribute="centerY" id="XDv-Va-hsz"/>
                     <constraint firstItem="Rld-0t-rGD" firstAttribute="top" secondItem="jkt-cx-Mfn" secondAttribute="bottom" constant="12" id="dVf-SC-xkG"/>
                     <constraint firstItem="6ea-mP-VgK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="gjS-TW-KJR"/>

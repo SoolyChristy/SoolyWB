@@ -179,6 +179,28 @@ extension NetWorkManager {
             
         }
     }
+    
+    /// 请求用户关注列表
+    ///
+    /// - Parameters:
+    ///   - cursor: 返回结果的游标，下一页用返回值里的next_cursor，上一页用previous_cursor，默认为0。
+    ///   - compeletion: 完成回调
+    func loadUserFollows(cursor: Int = 0, compeletion: @escaping (_ list: WBFriendList?, _ isSuccess: Bool) -> ()) {
+        let urlStr = "https://api.weibo.com/2/friendships/friends.json"
+        let parameters = ["access_token": userAccount.access_token ?? "",
+                          "cursor": cursor] as [String : Any]
+        
+        request(urlString: urlStr, method: .GET, parameters: parameters) { (json, isSuccess) in
+            guard let dic = json as NSDictionary? else {
+                print("请求用户关注列表数据为空！")
+                compeletion(nil, false)
+                return
+            }
+            let list = WBFriendList.deserialize(from: dic)
+            print("请求到\(list?.users?.count ?? 0)条数据")
+            compeletion(list, true)
+        }
+    }
 }
 
 // MARK: OAuth授权相关方法

@@ -23,6 +23,7 @@ class ProfileHeaderView: UIView {
     
     @IBOutlet weak var bgImageViewCons: NSLayoutConstraint!
     
+    weak var vc: ProfileViewController?
     
     class func headerView() -> ProfileHeaderView {
         let view = Bundle.main.loadNibNamed("ProfileHeaderView", owner: nil, options: nil)?[0] as! ProfileHeaderView
@@ -30,6 +31,12 @@ class ProfileHeaderView: UIView {
         return view
     }
 
+    @IBAction func followBtnClick() {
+        vc?.navigationController?.pushViewController(MyfollowsViewController(), animated: true)
+    }
+
+    @IBAction func starBtnClick() {
+    }
 }
 
 // MARK: 设置界面
@@ -41,7 +48,7 @@ extension ProfileHeaderView {
         }
         let vm = WBUserViewModel(model: user)
         
-        iconView.setImage(urlString: vm.user.avatar_large, placeholder: #imageLiteral(resourceName: "avatar_default_big"))
+        iconView.setCircularImage(urlString: vm.user.avatar_large, placeholder: #imageLiteral(resourceName: "avatar_default_big"), size: iconView.frame.size, bgColor: UIColor.clear)
         avatarIconView.image = vm.avatarImage
         nameLabel.text = vm.user.screen_name
         sexIconView.image = vm.sexImage

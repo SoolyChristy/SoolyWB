@@ -70,6 +70,9 @@
                     <state key="normal" title="167 关注">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="followBtnClick" destination="iN0-l3-epB" eventType="touchUpInside" id="edg-TU-Pn7"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Etj-2X-iG0">
                     <rect key="frame" x="101" y="283.5" width="70" height="30"/>
@@ -81,6 +84,9 @@
                     <state key="normal" title="5千万 粉丝">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="starBtnClick" destination="iN0-l3-epB" eventType="touchUpInside" id="5et-C1-UqB"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新浪认证：iOS开发者" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmN-BI-R3M" userLabel="认证标签">
                     <rect key="frame" x="12" y="205" width="381" height="17"/>
@@ -130,7 +136,7 @@
                 <outlet property="sexIconView" destination="XYe-fP-qVS" id="aGb-gw-x9H"/>
                 <outlet property="starBtn" destination="Etj-2X-iG0" id="tIG-t1-CWy"/>
             </connections>
-            <point key="canvasLocation" x="-139" y="-297"/>
+            <point key="canvasLocation" x="9" y="-322"/>
         </view>
     </objects>
     <resources>

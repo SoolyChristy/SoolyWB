@@ -34,7 +34,7 @@ class StatusTableViewCell: UITableViewCell {
     
     var viewModel: WBStatusViewModel? {
         didSet {
-            iconView.setImage(urlString: viewModel?.status.user?.avatar_large, placeholder: #imageLiteral(resourceName: "avatar_default_big"))
+            iconView.setCircularImage(urlString: viewModel?.status.user?.avatar_large, placeholder: #imageLiteral(resourceName: "avatar_default_big"), size: iconView.frame.size, bgColor: self.backgroundColor ?? UIColor.clear)
             nameLabel.text = viewModel?.status.user?.screen_name
             timeLabel.text = viewModel?.time
             resourceLabel.text = viewModel?.source
@@ -61,17 +61,17 @@ class StatusTableViewCell: UITableViewCell {
 }
 
 extension StatusTableViewCell: WBLabelDelegate {
-    func labelDidSelectedLink() {
-        let vv = textViewController()
-        
+    func labelDidSelectedLink(text: String) {
+        let vv = WebViewController()
+        vv.urlStr = text
         vc?.navigationController?.pushViewController(vv, animated: true)
     }
     
-    func labelDidSelectedAt() {
+    func labelDidSelectedAt(text: String) {
         vc?.navigationController?.pushViewController(BasicViewController(), animated: true)
     }
     
-    func labelDidSelectedTopic() {
+    func labelDidSelectedTopic(text: String) {
         vc?.navigationController?.pushViewController(BasicViewController(), animated: true)
     }
 }

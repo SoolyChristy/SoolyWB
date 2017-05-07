@@ -120,9 +120,9 @@ extension UINavigationController {
                     return et_popToViewController(viewController, animated: animated)
                 }
             }
-        } else {
-            navigationBar.isHidden = false
         }
+        
+        navigationBar.isHidden = false
         
         return et_popToViewController(viewController, animated: animated)
     }

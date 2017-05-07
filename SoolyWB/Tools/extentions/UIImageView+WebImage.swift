@@ -17,4 +17,19 @@ extension UIImageView {
         let url = URL(string: urlString ?? "")
         kf.setImage(with: url, placeholder: placeholder)
     }
+    
+    /// 设置圆形图片
+    ///
+    /// - Parameters:
+    ///   - urlString: url
+    ///   - placeholder: 占位图
+    ///   - size: 图片大小
+    ///   - bgColor: 背景颜色
+    func setCircularImage(urlString: String?, placeholder: UIImage?, size: CGSize, bgColor: UIColor) {
+        let url = URL(string: urlString ?? "")
+        
+        kf.setImage(with: url, placeholder: placeholder) { [weak self] (image, _, _, _) in
+            self?.image = image?.circuralImage(size: size, backgroundColor: bgColor)
+        }
+    }
 }

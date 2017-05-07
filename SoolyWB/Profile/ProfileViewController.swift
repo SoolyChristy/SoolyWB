@@ -69,12 +69,13 @@ extension ProfileViewController {
         
         // 头部视图
         headerView.frame = CGRect(x: 0, y: -profileHeaderViewHeight, width: screenWidth, height: profileHeaderViewHeight)
+        headerView.vc = self
         tableView.addSubview(headerView)
         
         // 偏移距离
         tableView.contentOffset = CGPoint(x: 0, y: -profileHeaderViewHeight)
         
-//        tableView.refreshControl = nil
+        tableView.refreshControl = nil
         
         tableView.register(UINib(nibName: "StatusTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: statusCellID)
         tableView.register(UINib(nibName: "RepostStatusCell", bundle: Bundle.main), forCellReuseIdentifier: repostCellID)

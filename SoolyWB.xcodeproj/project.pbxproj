@@ -25,6 +25,11 @@
 		703695DF1EACFFFC0029834F /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703695DD1EACFFFC0029834F /* ComposeViewController.xib */; };
 		70379AA11EAB121800CA42DA /* RepostStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70379AA01EAB121800CA42DA /* RepostStatusCell.xib */; };
 		70379AA31EAB141300CA42DA /* toolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70379AA21EAB141300CA42DA /* toolBarView.swift */; };
+		703E59D21EBECB3F00D36847 /* MyfollowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703E59D11EBECB3F00D36847 /* MyfollowsViewController.swift */; };
+		703E59D51EBEF55100D36847 /* MyfriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703E59D31EBEF55100D36847 /* MyfriendTableViewCell.swift */; };
+		703E59D61EBEF55100D36847 /* MyfriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703E59D41EBEF55100D36847 /* MyfriendTableViewCell.xib */; };
+		703E59D91EBEFB4B00D36847 /* WBFriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703E59D81EBEFB4B00D36847 /* WBFriendList.swift */; };
+		703E59DB1EBF40D500D36847 /* UIImage+Circular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703E59DA1EBF40D500D36847 /* UIImage+Circular.swift */; };
 		70460E781EB1A2B5005A5A02 /* EmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70460E771EB1A2B5005A5A02 /* EmoticonInputView.swift */; };
 		70460E7A1EB1A2D5005A5A02 /* EmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70460E791EB1A2D5005A5A02 /* EmoticonInputView.xib */; };
 		70460E7C1EB1A7EE005A5A02 /* EmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70460E7B1EB1A7EE005A5A02 /* EmoticonCell.swift */; };
@@ -35,7 +40,7 @@
 		70686BB11EB8A1AC00ACA643 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70686BAF1EB8A1AC00ACA643 /* ProfileHeaderView.xib */; };
 		70686BB31EB8CFF800ACA643 /* WBUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70686BB21EB8CFF800ACA643 /* WBUserViewModel.swift */; };
 		7072A9F41EBDF9B000195E59 /* PopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7072A9F31EBDF9B000195E59 /* PopMenuViewController.swift */; };
-		707BC7931EB59556009FFA9D /* textViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BC7921EB59556009FFA9D /* textViewController.swift */; };
+		707BC7931EB59556009FFA9D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BC7921EB59556009FFA9D /* WebViewController.swift */; };
 		707BC7951EB5CB4E009FFA9D /* ETNavBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BC7941EB5CB4E009FFA9D /* ETNavBarTransparent.swift */; };
 		70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B351EA5B50C008F9A02 /* AppDelegate.swift */; };
 		70879B3B1EA5B50C008F9A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70879B391EA5B50C008F9A02 /* Main.storyboard */; };
@@ -105,6 +110,11 @@
 		703695DD1EACFFFC0029834F /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		70379AA01EAB121800CA42DA /* RepostStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepostStatusCell.xib; sourceTree = "<group>"; };
 		70379AA21EAB141300CA42DA /* toolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toolBarView.swift; sourceTree = "<group>"; };
+		703E59D11EBECB3F00D36847 /* MyfollowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyfollowsViewController.swift; sourceTree = "<group>"; };
+		703E59D31EBEF55100D36847 /* MyfriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyfriendTableViewCell.swift; sourceTree = "<group>"; };
+		703E59D41EBEF55100D36847 /* MyfriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyfriendTableViewCell.xib; sourceTree = "<group>"; };
+		703E59D81EBEFB4B00D36847 /* WBFriendList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBFriendList.swift; sourceTree = "<group>"; };
+		703E59DA1EBF40D500D36847 /* UIImage+Circular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Circular.swift"; sourceTree = "<group>"; };
 		70460E771EB1A2B5005A5A02 /* EmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonInputView.swift; sourceTree = "<group>"; };
 		70460E791EB1A2D5005A5A02 /* EmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmoticonInputView.xib; sourceTree = "<group>"; };
 		70460E7B1EB1A7EE005A5A02 /* EmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonCell.swift; sourceTree = "<group>"; };
@@ -115,7 +125,7 @@
 		70686BAF1EB8A1AC00ACA643 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 		70686BB21EB8CFF800ACA643 /* WBUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserViewModel.swift; sourceTree = "<group>"; };
 		7072A9F31EBDF9B000195E59 /* PopMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuViewController.swift; sourceTree = "<group>"; };
-		707BC7921EB59556009FFA9D /* textViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textViewController.swift; sourceTree = "<group>"; };
+		707BC7921EB59556009FFA9D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		707BC7941EB5CB4E009FFA9D /* ETNavBarTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETNavBarTransparent.swift; sourceTree = "<group>"; };
 		70879B321EA5B50C008F9A02 /* SoolyWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70879B351EA5B50C008F9A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +237,7 @@
 				7010F3A41EA8EE4B002CD908 /* UIColor+HexString.swift */,
 				70FD4A951EAA13370008903B /* String+extension.swift */,
 				703695D81EACF5F30029834F /* UIImage+extension.swift */,
+				703E59DA1EBF40D500D36847 /* UIImage+Circular.swift */,
 			);
 			name = "extentions(拓展)";
 			path = extentions;
@@ -248,6 +259,26 @@
 				703695DD1EACFFFC0029834F /* ComposeViewController.xib */,
 			);
 			path = "发布微博";
+			sourceTree = "<group>";
+		};
+		703E59D01EBECAE300D36847 /* 关注/粉丝 */ = {
+			isa = PBXGroup;
+			children = (
+				703E59D71EBEFB3500D36847 /* Model */,
+				703E59D11EBECB3F00D36847 /* MyfollowsViewController.swift */,
+				703E59D31EBEF55100D36847 /* MyfriendTableViewCell.swift */,
+				703E59D41EBEF55100D36847 /* MyfriendTableViewCell.xib */,
+			);
+			name = "关注/粉丝";
+			path = "follows:stars";
+			sourceTree = "<group>";
+		};
+		703E59D71EBEFB3500D36847 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				703E59D81EBEFB4B00D36847 /* WBFriendList.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		70460E761EB1A271005A5A02 /* View */ = {
@@ -367,7 +398,7 @@
 			children = (
 				7010F3971EA89542002CD908 /* cell */,
 				70879B911EA61CD5008F9A02 /* HomeViewController.swift */,
-				707BC7921EB59556009FFA9D /* textViewController.swift */,
+				707BC7921EB59556009FFA9D /* WebViewController.swift */,
 			);
 			name = "Home(主页)";
 			path = Home;
@@ -394,6 +425,7 @@
 		70879B951EA61D0B008F9A02 /* Profile(我) */ = {
 			isa = PBXGroup;
 			children = (
+				703E59D01EBECAE300D36847 /* 关注/粉丝 */,
 				70686BAD1EB8A1AC00ACA643 /* View */,
 				701AAB6A1EB0A949007B5AA8 /* ProfileViewController.swift */,
 			);
@@ -600,6 +632,7 @@
 				70879B3D1EA5B50C008F9A02 /* Assets.xcassets in Resources */,
 				70C0E9DC1EB0DF63003725B9 /* HMEmoticon.bundle in Resources */,
 				703695DF1EACFFFC0029834F /* ComposeViewController.xib in Resources */,
+				703E59D61EBEF55100D36847 /* MyfriendTableViewCell.xib in Resources */,
 				70379AA11EAB121800CA42DA /* RepostStatusCell.xib in Resources */,
 				70879B3B1EA5B50C008F9A02 /* Main.storyboard in Resources */,
 				70686BB11EB8A1AC00ACA643 /* ProfileHeaderView.xib in Resources */,
@@ -782,27 +815,31 @@
 				70FD4A961EAA13370008903B /* String+extension.swift in Sources */,
 				70879B361EA5B50C008F9A02 /* AppDelegate.swift in Sources */,
 				7010F3A51EA8EE4B002CD908 /* UIColor+HexString.swift in Sources */,
+				703E59D91EBEFB4B00D36847 /* WBFriendList.swift in Sources */,
 				70460E7E1EB1B190005A5A02 /* EmoticonCollectionViewLayout.swift in Sources */,
 				7010F39E1EA8A317002CD908 /* WBStatusViewModel.swift in Sources */,
 				70879B7F1EA5E0AD008F9A02 /* MainViewController.swift in Sources */,
 				70879B991EA61D1A008F9A02 /* NetWorkManager.swift in Sources */,
 				70A4E6EA1EA65BB600CF9E74 /* WBStatus.swift in Sources */,
+				703E59D21EBECB3F00D36847 /* MyfollowsViewController.swift in Sources */,
 				70460E821EB22D65005A5A02 /* WBEmoticonAttachment.swift in Sources */,
 				7010F3941EA88A0C002CD908 /* PullUpView.swift in Sources */,
 				7010F39A1EA89577002CD908 /* StatusTableViewCell.swift in Sources */,
 				7072A9F41EBDF9B000195E59 /* PopMenuViewController.swift in Sources */,
 				70686BB31EB8CFF800ACA643 /* WBUserViewModel.swift in Sources */,
 				701AAB691EB0A93C007B5AA8 /* DiscoverViewController.swift in Sources */,
-				707BC7931EB59556009FFA9D /* textViewController.swift in Sources */,
+				707BC7931EB59556009FFA9D /* WebViewController.swift in Sources */,
 				70879B811EA5E0AD008F9A02 /* WBTabBarItemContentView.swift in Sources */,
 				70879B921EA61CD5008F9A02 /* HomeViewController.swift in Sources */,
 				701AAB671EB0A8F7007B5AA8 /* MessageViewController.swift in Sources */,
 				703695D91EACF5F30029834F /* UIImage+extension.swift in Sources */,
+				703E59DB1EBF40D500D36847 /* UIImage+Circular.swift in Sources */,
 				70686BB01EB8A1AC00ACA643 /* ProfileHeaderView.swift in Sources */,
 				70460E801EB1E04C005A5A02 /* EmoticonToolBar.swift in Sources */,
 				70345BBC1EB4C2130094CEB2 /* WBLabel.swift in Sources */,
 				70879BA01EA640E4008F9A02 /* WBUserAccount.swift in Sources */,
 				70FD4A981EAA512A0008903B /* StatusPicView.swift in Sources */,
+				703E59D51EBEF55100D36847 /* MyfriendTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

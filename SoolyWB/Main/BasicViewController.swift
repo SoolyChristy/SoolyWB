@@ -40,16 +40,6 @@ class BasicViewController: UIViewController {
         loadData()
         
     }
-
-    @objc func rightBtnClick(btn: UIButton) {
-        let popVc = PopMenuViewController()
-        popVc.modalPresentationStyle = .popover
-        popVc.preferredContentSize = CGSize(width: 160, height: 200)
-        popVc.popoverPresentationController?.sourceView = btn
-        popVc.popoverPresentationController?.sourceRect = btn.bounds
-
-        present(popVc, animated: true)
-    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -65,6 +55,23 @@ extension BasicViewController {
     }
 }
 
+// MARK: 监听方法
+extension BasicViewController {
+    @objc func rightBtnClick(btn: UIButton) {
+        let popVc = PopMenuViewController()
+        popVc.modalPresentationStyle = .popover
+        popVc.preferredContentSize = CGSize(width: 160, height: 200)
+        popVc.popoverPresentationController?.sourceView = btn
+        popVc.popoverPresentationController?.sourceRect = btn.bounds
+        
+        present(popVc, animated: true)
+    }
+    
+    @objc func backBtnClick() {
+        navigationController?.popViewController(animated: true)
+    }
+}
+
 // MARK: 设置界面
 extension BasicViewController {
      func setupUI() {
@@ -72,8 +79,6 @@ extension BasicViewController {
         
         // 取消自动缩进 - 如果隐藏了导航栏，会缩进 20 个点
         automaticallyAdjustsScrollViewInsets = false
-        
-        
         
         setupNavigationBar()
         setupTableView()
@@ -86,9 +91,24 @@ extension BasicViewController {
         
         navigationBar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 76)
         
+        // 左边按钮
         setTitleBtn(tilte: "")
         
         navItem.leftBarButtonItem = UIBarButtonItem(customView: titleBtn)
+        
+        // 若不是根控制器 添加返回按钮
+        if navigationController?.viewControllers.count ?? 0 > 1 {
+            let backBtn = UIButton()
+            
+            backBtn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+            backBtn.setImage(#imageLiteral(resourceName: "back_highlighted"), for: .highlighted)
+            
+            backBtn.addTarget(self, action: #selector(backBtnClick), for: .touchUpInside)
+            
+            backBtn.sizeToFit()
+
+            navItem.leftBarButtonItems = [UIBarButtonItem(customView: backBtn), UIBarButtonItem(customView: titleBtn)]
+        }
         
         // 右边按钮
         let btn = UIButton()

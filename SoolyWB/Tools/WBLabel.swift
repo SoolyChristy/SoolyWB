@@ -9,9 +9,9 @@
 import UIKit
 
 protocol WBLabelDelegate: NSObjectProtocol {
-    func labelDidSelectedLink()
-    func labelDidSelectedTopic()
-    func labelDidSelectedAt()
+    func labelDidSelectedLink(text: String)
+    func labelDidSelectedTopic(text: String)
+    func labelDidSelectedAt(text: String)
 }
 
 class WBLabel: UILabel {
@@ -90,21 +90,24 @@ class WBLabel: UILabel {
         // 判断index是否在 range里
         for range in urlRanges ?? [] {
             if NSLocationInRange(index, range) {
-                delegate?.labelDidSelectedLink()
+                let str = (textStorage.string as NSString).substring(with: range)
+                delegate?.labelDidSelectedLink(text: str)
                 return
             }
         }
         
         for range in topicRanges ?? [] {
             if NSLocationInRange(index, range) {
-                delegate?.labelDidSelectedTopic()
+                let str = (textStorage.string as NSString).substring(with: range)
+                delegate?.labelDidSelectedTopic(text: str)
                 return
             }
         }
         
         for range in atRanges ?? [] {
             if NSLocationInRange(index, range) {
-                delegate?.labelDidSelectedAt()
+                let str = (textStorage.string as NSString).substring(with: range)
+                delegate?.labelDidSelectedAt(text: str)
                 return
             }
         }
