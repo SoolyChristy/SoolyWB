@@ -86,7 +86,7 @@ extension NetWorkManager {
                 var statusVMs = [WBStatusViewModel]()
                 guard let statusesArr = json?["statuses"] as? [NSDictionary] else {
                     compeletion(nil, false)
-                    print("请求成功，但微博数据为空！")
+                    print("请求成功，但微博数据为空！原因：当日微博API调取已达上限，明日重置")
                     return
                 }
                 for statusDic in statusesArr {

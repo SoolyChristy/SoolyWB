@@ -50,7 +50,15 @@ extension LoginViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         
         HUD.hide()
+        // 自动填充
+        // 准备 js
+        let js = "document.getElementById('userId').value = '13007157719'; " +
+        "document.getElementById('passwd').value = 'WSL1995';"
+        //        let js = "document.getElementById('userId').value = 'm13080602718@sina.com'; " +
+        //        "document.getElementById('passwd').value = 'm13080602718';"
         
+        // 让 webview 执行 js
+        webView.stringByEvaluatingJavaScript(from: js)
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
