@@ -59,7 +59,7 @@ class WBUserAccount: HandyJSON {
         // 去除不需要的信息
         dic.removeValue(forKey: "expires_in")
         dic.removeValue(forKey: "user")
-        
+
         // 存入沙盒
         (dic as NSDictionary).write(toFile: userAccountPath, atomically: true)
         print("存储用户账户 - \(userAccountPath)")

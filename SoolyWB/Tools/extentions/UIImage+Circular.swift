@@ -17,17 +17,23 @@ extension UIImage {
     ///   - size: 图片大小
     ///   - backgroundColor: 背景颜色
     /// - Returns: 圆形图片
-    func circuralImage(size: CGSize, backgroundColor: UIColor) -> UIImage? {
+    func circuralImage(size: CGSize, backgroundColor: UIColor?, isTransparent: Bool = false) -> UIImage? {
         
         let rect = CGRect(origin: CGPoint(), size: size)
         
         // 上下文
         // 参数: 1.size 绘图的尺寸  2. true(不透明) false(透明) 3. 屏幕分辨率 0: 选择当前设备分辨率
-        UIGraphicsBeginImageContextWithOptions(size, true, 0)
+        if isTransparent {
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        }else {
+            UIGraphicsBeginImageContextWithOptions(size, true, 0)
+        }
         
         // 背景填充
-        backgroundColor.setFill()
-        UIRectFill(rect)
+        if let bgColor = backgroundColor {
+            bgColor.setFill()
+            UIRectFill(rect)
+        }
         
         // 创建圆形路径
         let path = UIBezierPath(ovalIn: rect)

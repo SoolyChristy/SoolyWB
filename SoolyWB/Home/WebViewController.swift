@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
 class WebViewController: UIViewController {
 
-    lazy var webView: UIWebView = UIWebView()
     var urlStr: String?
     
+    lazy var webView: WKWebView = WKWebView()
     lazy var backBtn: UIButton = UIButton()
     lazy var closeBtn: UIButton = UIButton()
+    lazy var progressView: UIProgressView = UIProgressView(progressViewStyle: .default)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,10 @@ class WebViewController: UIViewController {
         super.viewDidDisappear(animated)
         navigationItem.hidesBackButton = false
     }
+    
+    deinit {
+        webView.removeObserver(self, forKeyPath: "estimatedProgress")
+    }
 }
 
 // MARK: 监听方法
@@ -47,6 +53,26 @@ extension WebViewController {
     @objc fileprivate func closeBtnClick() {
         navigationController?.popViewController(animated: true)
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            let progress = Float(webView.estimatedProgress)
+            
+            if progress == 0 {
+                progressView.isHidden = false
+            }
+            
+            self.progressView.setProgress(progress, animated: true)
+            
+            if progress == 1.0 {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                    self.progressView.isHidden = true
+                    self.progressView.progress = 0
+                })
+            }
+
+        }
+    }
 }
 
 extension WebViewController {
@@ -59,6 +85,8 @@ extension WebViewController {
         navigationController?.navigationBar.isHidden = false
         automaticallyAdjustsScrollViewInsets = false
         setupWebView()
+        
+        setupProgressView()
         
     }
     
@@ -90,10 +118,15 @@ extension WebViewController {
     fileprivate func setupWebView() {
         view.addSubview(webView)
         webView.frame = CGRect(x: 0, y: 64, width: screenWidth, height: screenHeight - 64)
-        webView.delegate = self
+
         webView.backgroundColor = UIColor.white
         
+        webView.navigationDelegate = self
+        
         (webView.subviews[0] as? UIScrollView)?.bounces = false
+        
+        // 添加KVO监听进度
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: [], context: nil)
         
         guard let urlStr = urlStr,
             let url = URL(string: urlStr) else {
@@ -102,15 +135,24 @@ extension WebViewController {
         
         let request = URLRequest(url: url)
         
-        webView.loadRequest(request)
+        webView.load(request)
+    }
+    
+    fileprivate func setupProgressView() {
+        progressView.frame = CGRect(x: 0, y: 41.5, width: screenWidth, height: 0)
+        progressView.tintColor = wbOrange
+        progressView.trackTintColor = UIColor.clear
+        navigationController?.navigationBar.addSubview(progressView)
     }
 }
 
-extension WebViewController: UIWebViewDelegate {
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+extension WebViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // 如果webView可以返回 添加关闭按钮
         if webView.canGoBack {
-            setupCloseBtn()
+            DispatchQueue.main.async {
+                self.setupCloseBtn()
+            }
         }
     }
 }

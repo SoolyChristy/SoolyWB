@@ -19,15 +19,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="435" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21q-f0-NoI">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lxh_emoticon" translatesAutoresizingMaskIntoConstraints="NO" id="21q-f0-NoI">
                         <rect key="frame" x="12" y="12" width="49" height="49"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="49" id="IfL-Ji-dUd"/>
                             <constraint firstAttribute="height" constant="49" id="PqR-mq-kRr"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DW-Jh-YEd">
-                        <rect key="frame" x="73" y="17" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浪小花" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DW-Jh-YEd">
+                        <rect key="frame" x="73" y="17" width="52" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,10 +39,10 @@
                             <constraint firstAttribute="height" constant="14" id="oVp-HI-Zpz"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-Vb-65e" customClass="WBLabel" customModule="SoolyWB" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你眼光很好，感谢关注！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-Vb-65e" customClass="WBLabel" customModule="SoolyWB" customModuleProvider="target">
                         <rect key="frame" x="73" y="42" width="324" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ry-Th-eRo">
@@ -80,5 +80,6 @@
     <resources>
         <image name="avatar_vip" width="14" height="14"/>
         <image name="followed" width="30" height="30"/>
+        <image name="lxh_emoticon" width="24" height="24"/>
     </resources>
 </document>

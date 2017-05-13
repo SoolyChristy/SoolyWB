@@ -8,6 +8,14 @@
 
 import UIKit
 
+/// 点击图片通知
+let photoDidSelectedNotification = "photoDidSelectedNotification"
+/// 图片索引
+let photoDidSelectedIndex = "photoDidSelectedIndex"
+/// 图片url数组
+let middlePhotoUrls = "middlePhotoUrls"
+let largePhotoUrls = "largePhotoUrls"
+
 class StatusPicView: UIView {
 
     /// 高度约束
@@ -24,8 +32,29 @@ class StatusPicView: UIView {
         }
     }
     
+    lazy var middlePicUrlStrs = [String]()
+    lazy var largePicUrlStrs = [String]()
+    
     override func awakeFromNib() {
         setupUI()
+    }
+    
+    /// 手势监听方法
+    @objc fileprivate func imageTaped(recognizer: UITapGestureRecognizer) {
+        guard let urls = viewModel?.picUrls, var index = recognizer.view?.tag else {
+            return
+        }
+        
+        // 四张图处理
+        if urls.count == 4 && index >= 2 {
+            index -= 1
+        }
+        
+        let userInfo: [String: Any] = [photoDidSelectedIndex: index,
+                        middlePhotoUrls: middlePicUrlStrs,
+                        largePhotoUrls: largePicUrlStrs]
+        // 发送点击图片通知
+        NotificationCenter.default.post(name: Notification.Name(rawValue: photoDidSelectedNotification), object: nil, userInfo: userInfo)
     }
 }
 
@@ -46,7 +75,14 @@ extension StatusPicView {
             let imageView = UIImageView(frame: CGRect(x: x, y: y, width: picWH, height: picWH))
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
-//            imageView.isHidden = true
+            
+            imageView.isUserInteractionEnabled = true
+            imageView.tag = i
+
+            // 添加手势
+            let tap = UITapGestureRecognizer(target: self, action: #selector(imageTaped(recognizer:)))
+            imageView.addGestureRecognizer(tap)
+            
             addSubview(imageView)
         }
     }
@@ -57,6 +93,20 @@ extension StatusPicView {
             return
         }
 
+        // 由于重用的问题，需要先清空之前数据
+        middlePicUrlStrs.removeAll()
+        largePicUrlStrs.removeAll()
+        
+        // 记录图片字符串数组
+        for url in picUrls {
+            if let m = url.bmiddle_pic {
+                middlePicUrlStrs.append(m)
+            }
+            if let b = url.large_pic {
+                largePicUrlStrs.append(b)
+            }
+        }
+        
         // 设置图片
         for (i,picModel) in (picUrls).enumerated() {
             var index = i

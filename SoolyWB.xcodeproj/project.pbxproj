@@ -60,10 +60,13 @@
 		70879B9E1EA61EE2008F9A02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B9D1EA61EE2008F9A02 /* LoginViewController.swift */; };
 		70879BA01EA640E4008F9A02 /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70879B9F1EA640E4008F9A02 /* WBUserAccount.swift */; };
 		70A4E6EA1EA65BB600CF9E74 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4E6E91EA65BB600CF9E74 /* WBStatus.swift */; };
+		70AD9E5D1EC60BEF007F4F79 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD9E5C1EC60BEF007F4F79 /* WBTitleButton.swift */; };
 		70C0E9D71EB0C474003725B9 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C0E9D61EB0C474003725B9 /* ComposeTextView.swift */; };
 		70C0E9DA1EB0DF48003725B9 /* EmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C0E9D91EB0DF48003725B9 /* EmoticonManager.swift */; };
 		70C0E9DC1EB0DF63003725B9 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70C0E9DB1EB0DF63003725B9 /* HMEmoticon.bundle */; };
 		70C0E9DF1EB0E472003725B9 /* WBEmoticonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C0E9DE1EB0E472003725B9 /* WBEmoticonModel.swift */; };
+		70D83F691EC087220043CE12 /* WBPhotoBroswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D83F681EC087220043CE12 /* WBPhotoBroswerController.swift */; };
+		70D83F6B1EC0B8880043CE12 /* WBPhotoViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D83F6A1EC0B8880043CE12 /* WBPhotoViewerController.swift */; };
 		70FD4A961EAA13370008903B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD4A951EAA13370008903B /* String+extension.swift */; };
 		70FD4A981EAA512A0008903B /* StatusPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD4A971EAA512A0008903B /* StatusPicView.swift */; };
 		D915DF9E8138604855B3762C /* Pods_SoolyWBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863261F819D4D403EFEC9BE7 /* Pods_SoolyWBTests.framework */; };
@@ -151,10 +154,13 @@
 		70879B9D1EA61EE2008F9A02 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		70879B9F1EA640E4008F9A02 /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		70A4E6E91EA65BB600CF9E74 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
+		70AD9E5C1EC60BEF007F4F79 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
 		70C0E9D61EB0C474003725B9 /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		70C0E9D91EB0DF48003725B9 /* EmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonManager.swift; sourceTree = "<group>"; };
 		70C0E9DB1EB0DF63003725B9 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		70C0E9DE1EB0E472003725B9 /* WBEmoticonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBEmoticonModel.swift; sourceTree = "<group>"; };
+		70D83F681EC087220043CE12 /* WBPhotoBroswerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBPhotoBroswerController.swift; sourceTree = "<group>"; };
+		70D83F6A1EC0B8880043CE12 /* WBPhotoViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBPhotoViewerController.swift; sourceTree = "<group>"; };
 		70FD4A951EAA13370008903B /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		70FD4A971EAA512A0008903B /* StatusPicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPicView.swift; sourceTree = "<group>"; };
 		75EA7C6DCC8B2806118E110C /* Pods-SoolyWBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWBUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWBUITests/Pods-SoolyWBUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +381,7 @@
 		70879B791EA5E0AD008F9A02 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				70AD9E5B1EC60B88007F4F79 /* TitleButton */,
 				7072A9F01EBDB11F00195E59 /* PopMenu */,
 				70879B821EA61450008F9A02 /* TabBar */,
 				70879B7A1EA5E0AD008F9A02 /* BasicViewController.swift */,
@@ -444,6 +451,7 @@
 		70879B971EA61D1A008F9A02 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				70D83F671EC086890043CE12 /* SLPhotoBrowser */,
 				70345BBA1EB4C1E30094CEB2 /* WBLabel */,
 				70C0E9D81EB0DF36003725B9 /* Emoticon */,
 				7010F39F1EA8E860002CD908 /* extentions(拓展) */,
@@ -463,6 +471,14 @@
 			);
 			name = "Model(模型)";
 			path = Model;
+			sourceTree = "<group>";
+		};
+		70AD9E5B1EC60B88007F4F79 /* TitleButton */ = {
+			isa = PBXGroup;
+			children = (
+				70AD9E5C1EC60BEF007F4F79 /* WBTitleButton.swift */,
+			);
+			name = TitleButton;
 			sourceTree = "<group>";
 		};
 		70C0E9D51EB0C44D003725B9 /* View */ = {
@@ -491,6 +507,15 @@
 				70460E811EB22D65005A5A02 /* WBEmoticonAttachment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		70D83F671EC086890043CE12 /* SLPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				70D83F681EC087220043CE12 /* WBPhotoBroswerController.swift */,
+				70D83F6A1EC0B8880043CE12 /* WBPhotoViewerController.swift */,
+			);
+			path = SLPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		CBE0B260E147E33764D16C4A /* Pods */ = {
@@ -799,6 +824,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C0E9D71EB0C474003725B9 /* ComposeTextView.swift in Sources */,
+				70AD9E5D1EC60BEF007F4F79 /* WBTitleButton.swift in Sources */,
 				70879B9E1EA61EE2008F9A02 /* LoginViewController.swift in Sources */,
 				7010F3A11EA8E87C002CD908 /* UIImageView+WebImage.swift in Sources */,
 				70C0E9DF1EB0E472003725B9 /* WBEmoticonModel.swift in Sources */,
@@ -806,6 +832,7 @@
 				70879B9C1EA61D7F008F9A02 /* Header.swift in Sources */,
 				70879B7E1EA5E0AD008F9A02 /* BasicViewController.swift in Sources */,
 				70879B801EA5E0AD008F9A02 /* WBNavigationController.swift in Sources */,
+				70D83F691EC087220043CE12 /* WBPhotoBroswerController.swift in Sources */,
 				70460E7C1EB1A7EE005A5A02 /* EmoticonCell.swift in Sources */,
 				701AAB6B1EB0A949007B5AA8 /* ProfileViewController.swift in Sources */,
 				70C0E9DA1EB0DF48003725B9 /* EmoticonManager.swift in Sources */,
@@ -830,6 +857,7 @@
 				701AAB691EB0A93C007B5AA8 /* DiscoverViewController.swift in Sources */,
 				707BC7931EB59556009FFA9D /* WebViewController.swift in Sources */,
 				70879B811EA5E0AD008F9A02 /* WBTabBarItemContentView.swift in Sources */,
+				70D83F6B1EC0B8880043CE12 /* WBPhotoViewerController.swift in Sources */,
 				70879B921EA61CD5008F9A02 /* HomeViewController.swift in Sources */,
 				701AAB671EB0A8F7007B5AA8 /* MessageViewController.swift in Sources */,
 				703695D91EACF5F30029834F /* UIImage+extension.swift in Sources */,

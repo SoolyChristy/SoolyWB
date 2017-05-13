@@ -20,7 +20,7 @@ class BasicViewController: UIViewController {
     var navigationBar = UINavigationBar()
     
     var navItem = UINavigationItem()
-    var titleBtn = UIButton()
+    var titleBtn = WBTitleButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +49,6 @@ class BasicViewController: UIViewController {
 // MARK: 加载数据
 extension BasicViewController {
      func loadData() {
-        // 获取登录用户账户信息
-        NetWorkManager.shared.getUserInfo()
         
     }
 }
@@ -92,8 +90,6 @@ extension BasicViewController {
         navigationBar.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 76)
         
         // 左边按钮
-        setTitleBtn(tilte: "")
-        
         navItem.leftBarButtonItem = UIBarButtonItem(customView: titleBtn)
         
         // 若不是根控制器 添加返回按钮
@@ -130,7 +126,7 @@ extension BasicViewController {
     }
     
      func setupTableView() {
-        tableView.frame = CGRect(x: 0, y: 88, width: screenWidth, height: screenHeight)
+        tableView.frame = CGRect(x: 0, y: 76, width: screenWidth, height: screenHeight)
         tableView.backgroundColor = UIColor.white
         tableView.delegate = self
         tableView.dataSource = self
@@ -150,12 +146,6 @@ extension BasicViewController {
 //        view.insertSubview(tableView, belowSubview: navigationBar)
     }
     
-    /// 设置title按钮
-    func setTitleBtn(tilte: String) {
-        let str = NSAttributedString(string: tilte, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 30)])
-        titleBtn.setAttributedTitle(str, for: [])
-        titleBtn.sizeToFit()
-    }
 }
 
 // MARK: tableView 代理方法、数据源方法

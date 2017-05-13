@@ -48,7 +48,7 @@ extension ProfileHeaderView {
         }
         let vm = WBUserViewModel(model: user)
         
-        iconView.setCircularImage(urlString: vm.user.avatar_large, placeholder: #imageLiteral(resourceName: "avatar_default_big"), size: iconView.frame.size, bgColor: UIColor.clear)
+        iconView.setCircularImage(urlString: vm.user.avatar_large, placeholder: #imageLiteral(resourceName: "avatar_default_big"), size: iconView.frame.size, bgColor: nil, isTransparent: true)
         avatarIconView.image = vm.avatarImage
         nameLabel.text = vm.user.screen_name
         sexIconView.image = vm.sexImage

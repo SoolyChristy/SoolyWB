@@ -29,7 +29,7 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_grassroot" translatesAutoresizingMaskIntoConstraints="NO" id="GJy-hm-OKx" userLabel="认证图片">
-                    <rect key="frame" x="82" y="150" width="14" height="14"/>
+                    <rect key="frame" x="70" y="144" width="14" height="14"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="14" id="jmW-RX-FdU"/>
                         <constraint firstAttribute="width" constant="14" id="zpb-w5-uA7"/>
@@ -110,9 +110,9 @@
                 <constraint firstItem="XYe-fP-qVS" firstAttribute="leading" secondItem="abG-UR-yV1" secondAttribute="trailing" constant="12" id="ZxF-eh-XpE"/>
                 <constraint firstItem="oz7-PY-6MK" firstAttribute="top" secondItem="10X-Sh-pwp" secondAttribute="bottom" constant="-40" id="aeC-cD-B7a"/>
                 <constraint firstItem="Ysa-G5-xJI" firstAttribute="leading" secondItem="oz7-PY-6MK" secondAttribute="leading" id="an0-q1-EcT"/>
-                <constraint firstItem="GJy-hm-OKx" firstAttribute="top" secondItem="oz7-PY-6MK" secondAttribute="bottom" constant="-10" id="e8A-pv-qqk"/>
+                <constraint firstItem="GJy-hm-OKx" firstAttribute="top" secondItem="oz7-PY-6MK" secondAttribute="bottom" constant="-16" id="e8A-pv-qqk"/>
                 <constraint firstItem="Etj-2X-iG0" firstAttribute="centerY" secondItem="C1g-Al-Cww" secondAttribute="centerY" id="hcu-Th-WFc"/>
-                <constraint firstItem="GJy-hm-OKx" firstAttribute="leading" secondItem="oz7-PY-6MK" secondAttribute="trailing" constant="-10" id="jiV-tj-DQC"/>
+                <constraint firstItem="GJy-hm-OKx" firstAttribute="leading" secondItem="oz7-PY-6MK" secondAttribute="trailing" constant="-22" id="jiV-tj-DQC"/>
                 <constraint firstItem="C1g-Al-Cww" firstAttribute="leading" secondItem="oz7-PY-6MK" secondAttribute="leading" id="kom-Xb-D3m"/>
                 <constraint firstItem="lmN-BI-R3M" firstAttribute="trailing" secondItem="Ysa-G5-xJI" secondAttribute="trailing" id="mzC-jY-ZVV"/>
                 <constraint firstItem="Ysa-G5-xJI" firstAttribute="top" secondItem="lmN-BI-R3M" secondAttribute="bottom" constant="6" id="nfK-2P-xj5"/>

@@ -15,6 +15,12 @@ class HomeViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // 监听点击图片通知
+        NotificationCenter.default.addObserver(self, selector: #selector(photoDidSelected(notification:)), name: Notification.Name(rawValue: photoDidSelectedNotification), object: nil)
+        
+        // 获取登录用户账户信息
+        NetWorkManager.shared.getUserInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +33,11 @@ class HomeViewController: BasicViewController {
         keyAnimation.duration = 0.25
         composeBtn.layer.add(keyAnimation, forKey: nil)
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
 }
 
 // MARK: 加载数据
@@ -87,12 +98,46 @@ extension HomeViewController {
     }
 }
 
+// MARK: 监听方法
+fileprivate extension HomeViewController {
+    /// 点击cell图片调用
+    @objc func photoDidSelected(notification: Notification) {
+        guard let index = notification.userInfo?[photoDidSelectedIndex] as? Int,
+            let middlePics = notification.userInfo?[middlePhotoUrls] as? [String],
+            let largePics = notification.userInfo?[largePhotoUrls] as? [String] else {
+                return
+        }
+        
+        let photoBroswer = WBPhotoBroswerController(index: index, middlePics: middlePics, largePics: largePics)
+        
+        present(photoBroswer, animated: true)
+    }
+    
+    /// 标题按钮点击
+    @objc func titleBtnClick(btn: UIButton) {
+        // 设置选中状态
+        titleBtn.isSelected = !titleBtn.isSelected
+        
+        let popVc = PopMenuViewController()
+        popVc.modalPresentationStyle = .popover
+        popVc.preferredContentSize = CGSize(width: 160, height: 200)
+        popVc.popoverPresentationController?.sourceView = btn
+        popVc.popoverPresentationController?.sourceRect = btn.bounds
+        
+        present(popVc, animated: true)
+
+    }
+}
+
 // MARK: 设置UI
 extension HomeViewController {
     
     override func setupUI() {
         super.setupUI()
-        setTitleBtn(tilte: "特别关心")
+        
+        titleBtn.setTitle(title: "首页", isHome: true)
+        titleBtn.addTarget(self, action: #selector(titleBtnClick(btn:)), for: .touchUpInside)
+        
         setupComposeButton()
     }
     

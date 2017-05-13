@@ -29,7 +29,7 @@ class ProfileViewController: BasicViewController {
                 
                 self.statusVMs += viewModel
                 self.tableView.reloadData()
-                
+                self.pullUpView.endRefreshing()
             }
             return
         }
@@ -84,6 +84,7 @@ extension ProfileViewController {
         tableView.estimatedRowHeight = 300
         
     }
+    
 }
 
 // MARK: tableView 方法
@@ -154,6 +155,14 @@ extension ProfileViewController {
         if offsetY > -profileHeaderViewHeight && offsetY < -(profileHeaderViewHeight - bgImageHeight) {
             // 设置导航条的透明度
             navBarBgAlpha = 1 - (offsetY - -264) / (-320 - -264)
+            
+        }
+        
+        // -305 < offset < -245
+        if offsetY > -305 && offsetY < -245 {
+            let alpha = (offsetY - -245) / (-305 - -245)
+            headerView.iconView.alpha = alpha
+            headerView.avatarIconView.alpha = alpha
         }
     }
 }

@@ -60,7 +60,7 @@ extension MyfollowsViewController {
 extension MyfollowsViewController {
     override func setupUI() {
         super.setupUI()
-        setTitleBtn(tilte: "我的关注")
+        titleBtn.setTitle(title: "我的关注")
     }
     
     override func setupTableView() {
