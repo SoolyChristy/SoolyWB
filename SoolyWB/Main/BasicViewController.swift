@@ -25,7 +25,7 @@ class BasicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: Notification.Name(rawValue: loginSuccessful), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadUserInfo), name: Notification.Name(rawValue: loginSuccessful), object: nil)
         
         // 判断是否登录
         if !NetWorkManager.shared.isUserLogin {
@@ -53,6 +53,11 @@ class BasicViewController: UIViewController {
 extension BasicViewController {
      func loadData() {
         
+    }
+    
+    @objc fileprivate func loadUserInfo() {
+        NetWorkManager.shared.getUserInfo()
+        loadData()
     }
 }
 
