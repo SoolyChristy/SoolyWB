@@ -30,7 +30,10 @@ class BasicViewController: UIViewController {
         // 判断是否登录
         if !NetWorkManager.shared.isUserLogin {
             
-            present(LoginViewController(), animated: false)
+            let loginVc = LoginViewController()
+            loginVc.title = "登录"
+            
+            present(UINavigationController(rootViewController: loginVc), animated: false)
             
             setupUI()
             return
