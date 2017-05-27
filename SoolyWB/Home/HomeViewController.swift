@@ -15,7 +15,7 @@ class HomeViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // 监听点击图片通知
         NotificationCenter.default.addObserver(self, selector: #selector(photoDidSelected(notification:)), name: Notification.Name(rawValue: photoDidSelectedNotification), object: nil)
         

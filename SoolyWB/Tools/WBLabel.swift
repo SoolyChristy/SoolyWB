@@ -65,8 +65,9 @@ class WBLabel: UILabel {
     // 绘制textStorage的文本内容
     override func drawText(in rect: CGRect) {
         
-        // 绘制背景
         let range = NSRange(location: 0, length: textStorage.length)
+        
+        // 绘制背景
         layoutManager.drawBackground(forGlyphRange: range, at: CGPoint(x: 0, y: 0))
         
         // 绘制字形

@@ -65,7 +65,9 @@ extension NetWorkManager {
     ///   - sinceID: since_id 返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0
     ///   - maxID: max_id 返回ID小于或等于max_id的微博，默认为0
     /// - 默认返回20条 微博模型数组
-    func loadStatuses(sinceID: Int64, maxID: Int64, compeletion: @escaping (_ Statues: [WBStatusViewModel]?, _ isSuccess: Bool) -> ()) {
+    func loadStatuses(sinceID: Int64,
+                      maxID: Int64,
+                      compeletion: @escaping (_ Statues: [WBStatusViewModel]?, _ isSuccess: Bool) -> ()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         guard let accessToken = userAccount.access_token else {
@@ -74,7 +76,6 @@ extension NetWorkManager {
             return
         }
         
-
         let param = ["access_token": accessToken,
                      "since_id": sinceID,
                      "max_id": maxID] as [String : Any]
@@ -118,7 +119,11 @@ extension NetWorkManager {
     /// - Parameters:
     ///   - uid: 请求用户ID
     ///   - compeletion: 完成回调
-    func loadUserStatuses(uid: String? = nil, sinceID: Int64, maxID: Int64,compeletion: @escaping (_ statuses: [WBStatusViewModel]?, _ isSuccess: Bool) -> ()) {
+    func loadUserStatuses(uid: String? = nil,
+                          sinceID: Int64,
+                          maxID: Int64,
+                          compeletion: @escaping (_ statuses: [WBStatusViewModel]?, _ isSuccess: Bool) -> ()) {
+        
         let urlStr = "https://api.weibo.com/2/statuses/user_timeline.json"
         var parameters: [String: Any] = ["access_token": userAccount.access_token ?? "",
                                          "since_id": sinceID,
@@ -130,7 +135,6 @@ extension NetWorkManager {
                           "since_id": sinceID,
                           "max_id": maxID]
         }
-        
         
         request(urlString: urlStr, method: .GET, parameters: parameters) { (json, isSuccess) in
             if isSuccess {
@@ -163,6 +167,7 @@ extension NetWorkManager {
     ///   - status: 微博内容
     ///   - compeletion: 完成回调(微博模型，是否成功)
     func updateStatus(status: String, compeletion: @escaping (_ status: WBStatus?, _ isSuccess: Bool) -> ()) {
+        
         let urlStr = "https://api.weibo.com/2/statuses/update.json"
         let parameters = ["access_token": userAccount.access_token ?? "",
                           "status": status]
@@ -186,6 +191,7 @@ extension NetWorkManager {
     ///   - cursor: 返回结果的游标，下一页用返回值里的next_cursor，上一页用previous_cursor，默认为0。
     ///   - compeletion: 完成回调
     func loadUserFollows(cursor: Int = 0, compeletion: @escaping (_ list: WBFriendList?, _ isSuccess: Bool) -> ()) {
+        
         let urlStr = "https://api.weibo.com/2/friendships/friends.json"
         let parameters = ["access_token": userAccount.access_token ?? "",
                           "cursor": cursor] as [String : Any]
@@ -252,7 +258,10 @@ extension NetWorkManager {
     ///   - method: HTTPMethod
     ///   - parameters: 参数字典
     ///   - compeletion: 完成回调(json：返回数据, isSuccese: 请求是否成功)
-    func request(urlString: String, method: WBHTTPMethod, parameters: [String: Any]?, compeletion: @escaping (_ json: [String: Any]?, _ isSuccese: Bool) -> ()) {
+    func request(urlString: String,
+                 method: WBHTTPMethod,
+                 parameters: [String: Any]?,
+                 compeletion: @escaping (_ json: [String: Any]?, _ isSuccese: Bool) -> ()) {
         
         var m: HTTPMethod
         if method == .GET {

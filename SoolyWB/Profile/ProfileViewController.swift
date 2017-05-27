@@ -164,5 +164,10 @@ extension ProfileViewController {
             headerView.iconView.alpha = alpha
             headerView.avatarIconView.alpha = alpha
         }
+        
+        if offsetY < -305 {
+            headerView.iconView.alpha = 1
+            headerView.avatarIconView.alpha = 1
+        }
     }
 }

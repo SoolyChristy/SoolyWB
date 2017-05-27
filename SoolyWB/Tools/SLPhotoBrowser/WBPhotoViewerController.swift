@@ -104,7 +104,7 @@ extension WBPhotoViewerController {
                 
                 imageView.frame = CGRect(x: 0, y: 0, width: width, height: screenHeight)
                 scrollView.contentSize = imageView.frame.size
-                
+        
                 let x = positionX * width / size.width - screenWidth / 2
                 let offsetX = min(x < 0 ? 0 : x, width - screenWidth)
                 
